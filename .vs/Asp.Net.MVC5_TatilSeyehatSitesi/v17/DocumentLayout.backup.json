@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\frkng\\source\\repos\\Asp.Net.MVC5_TatilSeyehatSitesi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|c:\\users\\frkng\\source\\repos\\asp.net.mvc5_tatilseyehatsitesi\\asp.net.mvc5_tatilseyehatsitesi\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|solutionrelative:asp.net.mvc5_tatilseyehatsitesi\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|c:\\users\\frkng\\source\\repos\\asp.net.mvc5_tatilseyehatsitesi\\asp.net.mvc5_tatilseyehatsitesi\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|solutionrelative:asp.net.mvc5_tatilseyehatsitesi\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -15,16 +11,8 @@
       "RelativeMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|solutionrelative:asp.net.mvc5_tatilseyehatsitesi\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|C:\\Users\\frkng\\source\\repos\\Asp.Net.MVC5_TatilSeyehatSitesi\\asp.net.mvc5_tatilseyehatsitesi\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|c:\\users\\frkng\\source\\repos\\asp.net.mvc5_tatilseyehatsitesi\\asp.net.mvc5_tatilseyehatsitesi\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|solutionrelative:asp.net.mvc5_tatilseyehatsitesi\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|C:\\Users\\frkng\\source\\repos\\Asp.Net.MVC5_TatilSeyehatSitesi\\asp.net.mvc5_tatilseyehatsitesi\\views\\shared\\_userlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|solutionrelative:asp.net.mvc5_tatilseyehatsitesi\\views\\shared\\_userlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|c:\\users\\frkng\\source\\repos\\asp.net.mvc5_tatilseyehatsitesi\\asp.net.mvc5_tatilseyehatsitesi\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|solutionrelative:asp.net.mvc5_tatilseyehatsitesi\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,83 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Model1.edmx [Diagram1]",
-              "DocumentMoniker": "C:\\Users\\frkng\\source\\repos\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Models\\Model1.edmx",
-              "RelativeDocumentMoniker": "Asp.Net.MVC5_TatilSeyehatSitesi\\Models\\Model1.edmx",
-              "ToolTip": "C:\\Users\\frkng\\source\\repos\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Models\\Model1.edmx [Diagram1]",
-              "RelativeToolTip": "Asp.Net.MVC5_TatilSeyehatSitesi\\Models\\Model1.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2025-11-17T15:04:36.354Z",
-              "EditorCaption": " [Diagram1]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Contact.cshtml",
               "DocumentMoniker": "C:\\Users\\frkng\\source\\repos\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Home\\Contact.cshtml",
               "RelativeDocumentMoniker": "Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Home\\Contact.cshtml",
               "ToolTip": "C:\\Users\\frkng\\source\\repos\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Home\\Contact.cshtml",
               "RelativeToolTip": "Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Home\\Contact.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAABPAQAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAgwCIAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-17T14:38:07.648Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\frkng\\source\\repos\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\frkng\\source\\repos\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAAAF4AAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-17T11:52:12.318Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_UserLayout.cshtml",
-              "DocumentMoniker": "C:\\Users\\frkng\\source\\repos\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Shared\\_UserLayout.cshtml",
-              "RelativeDocumentMoniker": "Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Shared\\_UserLayout.cshtml",
-              "ToolTip": "C:\\Users\\frkng\\source\\repos\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Shared\\_UserLayout.cshtml",
-              "RelativeToolTip": "Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Shared\\_UserLayout.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAiwB8AAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-17T11:50:57.988Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "About.cshtml",
-              "DocumentMoniker": "C:\\Users\\frkng\\source\\repos\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Home\\About.cshtml",
-              "RelativeDocumentMoniker": "Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Home\\About.cshtml",
-              "ToolTip": "C:\\Users\\frkng\\source\\repos\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Home\\About.cshtml",
-              "RelativeToolTip": "Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Home\\About.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-17T11:50:09.271Z",
+              "WhenOpened": "2025-11-17T18:01:58.793Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "C:\\Users\\frkng\\source\\repos\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Home\\About.cshtml",
+              "ToolTip": "C:\\Users\\frkng\\source\\repos\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Home\\About.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-17T16:06:42.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\frkng\\source\\repos\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Asp.Net.MVC5_TatilSeyehatSitesi\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\frkng\\source\\repos\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Asp.Net.MVC5_TatilSeyehatSitesi\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAiwBwAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T11:49:36.805Z",
+              "WhenOpened": "2025-11-17T16:05:25.454Z",
               "EditorCaption": ""
             }
           ]

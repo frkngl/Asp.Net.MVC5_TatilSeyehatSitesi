@@ -71,6 +71,30 @@
     <Property Name="DESCRIPTION" Type="nvarchar(max)" />
     <Property Name="IMAGE" Type="nvarchar" MaxLength="250" />
   </EntityType>
+  <Association Name="FK_TBLBLOGCOMMENTS_TBLBLOG">
+    <End Role="TBLBLOG" Type="Self.TBLBLOG" Multiplicity="0..1" />
+    <End Role="TBLBLOGCOMMENTS" Type="Self.TBLBLOGCOMMENTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLBLOG">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLBLOGCOMMENTS">
+        <PropertyRef Name="BLOGID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLTRAVELCOMMENTS_TBLTRAVELS">
+    <End Role="TBLTRAVELS" Type="Self.TBLTRAVELS" Multiplicity="0..1" />
+    <End Role="TBLTRAVELCOMMENTS" Type="Self.TBLTRAVELCOMMENTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLTRAVELS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLTRAVELCOMMENTS">
+        <PropertyRef Name="TRAVELSID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="TatilSeyehatMVC5ModelStoreContainer">
     <EntitySet Name="TBLABOUT" EntityType="Self.TBLABOUT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLADMIN" EntityType="Self.TBLADMIN" Schema="dbo" store:Type="Tables" />
@@ -79,5 +103,13 @@
     <EntitySet Name="TBLCONTACT" EntityType="Self.TBLCONTACT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLTRAVELCOMMENTS" EntityType="Self.TBLTRAVELCOMMENTS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLTRAVELS" EntityType="Self.TBLTRAVELS" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TBLBLOGCOMMENTS_TBLBLOG" Association="Self.FK_TBLBLOGCOMMENTS_TBLBLOG">
+      <End Role="TBLBLOG" EntitySet="TBLBLOG" />
+      <End Role="TBLBLOGCOMMENTS" EntitySet="TBLBLOGCOMMENTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLTRAVELCOMMENTS_TBLTRAVELS" Association="Self.FK_TBLTRAVELCOMMENTS_TBLTRAVELS">
+      <End Role="TBLTRAVELS" EntitySet="TBLTRAVELS" />
+      <End Role="TBLTRAVELCOMMENTS" EntitySet="TBLTRAVELCOMMENTS" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

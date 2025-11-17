@@ -182,6 +182,22 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="image\about.jpg" />
+    <Content Include="image\blog1.jpg" />
+    <Content Include="image\blog10.jpg" />
+    <Content Include="image\blog11.jpg" />
+    <Content Include="image\blog12.jpg" />
+    <Content Include="image\blog13.jpg" />
+    <Content Include="image\blog14.jpg" />
+    <Content Include="image\blog15.jpg" />
+    <Content Include="image\blog2.jpg" />
+    <Content Include="image\blog3.jpg" />
+    <Content Include="image\blog4.jpg" />
+    <Content Include="image\blog5.jpg" />
+    <Content Include="image\blog6.jpg" />
+    <Content Include="image\blog7.jpg" />
+    <Content Include="image\blog8.jpg" />
+    <Content Include="image\blog9.jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
