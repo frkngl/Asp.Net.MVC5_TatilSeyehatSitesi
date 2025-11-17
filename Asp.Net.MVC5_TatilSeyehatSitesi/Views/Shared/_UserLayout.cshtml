@@ -20,48 +20,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <script src="~/Theme/js/jquery.min.js"></script>
     <script src="~/Theme/js/responsiveslides.min.js"></script>
 
-    <script>// You can also use "$(window).load(function() {"
-    $(function () {
-      // Slideshow 1
-      $("#slider1").responsiveSlides({
-         auto: true,
-		 nav: true,
-		 speed: 500,
-		 namespace: "callbacks",
-      });
-    });</script>
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 1
+            $("#slider1").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+            });
+        });</script>
 </head>
 <body>
     <div class="header">
         <div class="wrap">
-            <div class="logo"><a href="index.html"><img src="~/Theme/images/logo.png" alt="" /></a></div>
-            <div class="con-right">
-                <div class="grid1-l-img">
-                    <img src="images/contact.png" alt="">
-                </div>
-                <div class="grid1-l-desc">
-                    <p>Contact : +91 00000-55555</p>
-                </div>
-                <div class="clear"></div>
-            </div>
+            <div class="logo"><a style="color: white; font-size: 2.5rem !important; padding: 0rem !important;" href="/Home/Index">Tatil Seyehat</a></div>
             <div class="clear"></div>
         </div>
     </div>
     <div class="header-bottom">
         <div class="wrap">
             <ul id="nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a class="hsubs" href="about.html">About</a></li>
-                <li>
-                    <a class="hsubs" href="destinations.html">Destinations</a>
-                    <ul class="subs">
-                        <li><a href="#">Hotels</a></li>
-                        <li><a href="#">Restaurants</a></li>
-                        <li><a href="#">Beach Resorts</a></li>
-                    </ul>
-                </li>
-                <li><a class="hsubs" href="destinations.html">Free Travel Guides</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="/Home/Index">Anasayfa</a></li>
+                <li><a class="hsubs" href="/Home/About">Hakkımızda</a></li>
+                <li> <a class="hsubs" href="destinations.html">Gezilerimiz</a> </li>
+                <li><a class="hsubs" href="destinations.html">Bloglar</a></li>
+                <li><a href="contact.html">İletişim</a></li>
             </ul>
         </div>
     </div>

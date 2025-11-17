@@ -13,5 +13,10 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
         {
             return View();
         }
+
+        public ActionResult About()
+        {
+            return View();
+        }
     }
 }
