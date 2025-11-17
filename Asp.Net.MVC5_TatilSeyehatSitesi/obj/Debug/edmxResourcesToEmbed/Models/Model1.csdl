@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TatilSeyehatMVC5Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TBLABOUT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IMAGE" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TBLADMIN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TBLBLOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TITLE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DATE" Type="DateTime" Precision="3" />
+    <Property Name="DESCRIPTOIN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IMAGE" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TBLBLOGCOMMENTS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERNAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MAIL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BLOGID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TBLCONTACT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="FAX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="FAX2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="LOCATION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TBLTRAVELCOMMENTS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERNAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MAIL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TRAVELSID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TBLTRAVELS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TITLE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DATE" Type="DateTime" Precision="3" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IMAGE" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="TatilSeyehatMVC5Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TBLABOUT" EntityType="Self.TBLABOUT" />
+    <EntitySet Name="TBLADMIN" EntityType="Self.TBLADMIN" />
+    <EntitySet Name="TBLBLOG" EntityType="Self.TBLBLOG" />
+    <EntitySet Name="TBLBLOGCOMMENTS" EntityType="Self.TBLBLOGCOMMENTS" />
+    <EntitySet Name="TBLCONTACT" EntityType="Self.TBLCONTACT" />
+    <EntitySet Name="TBLTRAVELCOMMENTS" EntityType="Self.TBLTRAVELCOMMENTS" />
+    <EntitySet Name="TBLTRAVELS" EntityType="Self.TBLTRAVELS" />
+  </EntityContainer>
+</Schema>

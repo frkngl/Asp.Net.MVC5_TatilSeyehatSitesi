@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TatilSeyehatMVC5Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TBLABOUT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IMAGE" Type="nvarchar" MaxLength="250" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TBLADMIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TBLBLOG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TITLE" Type="nvarchar" MaxLength="200" />
+          <Property Name="DATE" Type="datetime" />
+          <Property Name="DESCRIPTOIN" Type="nvarchar(max)" />
+          <Property Name="IMAGE" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="TBLBLOGCOMMENTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="250" />
+          <Property Name="MAIL" Type="nvarchar" MaxLength="250" />
+          <Property Name="COMMENT" Type="nvarchar(max)" />
+          <Property Name="BLOGID" Type="int" />
+        </EntityType>
+        <EntityType Name="TBLCONTACT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="ADDRESS" Type="nvarchar" MaxLength="250" />
+          <Property Name="PHONE" Type="nvarchar" MaxLength="20" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="250" />
+          <Property Name="FAX" Type="nvarchar" MaxLength="20" />
+          <Property Name="PHONE2" Type="nvarchar" MaxLength="20" />
+          <Property Name="EMAIL2" Type="nvarchar" MaxLength="250" />
+          <Property Name="FAX2" Type="nvarchar" MaxLength="20" />
+          <Property Name="LOCATION" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TBLTRAVELCOMMENTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="250" />
+          <Property Name="MAIL" Type="nvarchar" MaxLength="250" />
+          <Property Name="COMMENT" Type="nvarchar(max)" />
+          <Property Name="TRAVELSID" Type="int" />
+        </EntityType>
+        <EntityType Name="TBLTRAVELS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TITLE" Type="nvarchar" MaxLength="200" />
+          <Property Name="DATE" Type="datetime" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="IMAGE" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <Association Name="FK_TBLBLOGCOMMENTS_TBLBLOG">
+          <End Role="TBLBLOG" Type="Self.TBLBLOG" Multiplicity="0..1" />
+          <End Role="TBLBLOGCOMMENTS" Type="Self.TBLBLOGCOMMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBLBLOG">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBLBLOGCOMMENTS">
+              <PropertyRef Name="BLOGID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBLTRAVELCOMMENTS_TBLTRAVELS">
+          <End Role="TBLTRAVELS" Type="Self.TBLTRAVELS" Multiplicity="0..1" />
+          <End Role="TBLTRAVELCOMMENTS" Type="Self.TBLTRAVELCOMMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBLTRAVELS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBLTRAVELCOMMENTS">
+              <PropertyRef Name="TRAVELSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TatilSeyehatMVC5ModelStoreContainer">
+          <EntitySet Name="TBLABOUT" EntityType="Self.TBLABOUT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLADMIN" EntityType="Self.TBLADMIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLBLOG" EntityType="Self.TBLBLOG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLBLOGCOMMENTS" EntityType="Self.TBLBLOGCOMMENTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLCONTACT" EntityType="Self.TBLCONTACT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLTRAVELCOMMENTS" EntityType="Self.TBLTRAVELCOMMENTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLTRAVELS" EntityType="Self.TBLTRAVELS" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TBLBLOGCOMMENTS_TBLBLOG" Association="Self.FK_TBLBLOGCOMMENTS_TBLBLOG">
+            <End Role="TBLBLOG" EntitySet="TBLBLOG" />
+            <End Role="TBLBLOGCOMMENTS" EntitySet="TBLBLOGCOMMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBLTRAVELCOMMENTS_TBLTRAVELS" Association="Self.FK_TBLTRAVELCOMMENTS_TBLTRAVELS">
+            <End Role="TBLTRAVELS" EntitySet="TBLTRAVELS" />
+            <End Role="TBLTRAVELCOMMENTS" EntitySet="TBLTRAVELCOMMENTS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TatilSeyehatMVC5Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TBLABOUT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IMAGE" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBLADMIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBLBLOG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TITLE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
+          <Property Name="DESCRIPTOIN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMAGE" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TBLBLOGCOMMENTS" Relationship="TatilSeyehatMVC5Model.FK_TBLBLOGCOMMENTS_TBLBLOG" FromRole="TBLBLOG" ToRole="TBLBLOGCOMMENTS" />
+        </EntityType>
+        <EntityType Name="TBLBLOGCOMMENTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="MAIL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BLOGID" Type="Int32" />
+          <NavigationProperty Name="TBLBLOG" Relationship="TatilSeyehatMVC5Model.FK_TBLBLOGCOMMENTS_TBLBLOG" FromRole="TBLBLOGCOMMENTS" ToRole="TBLBLOG" />
+        </EntityType>
+        <EntityType Name="TBLCONTACT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FAX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FAX2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LOCATION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBLTRAVELCOMMENTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="MAIL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TRAVELSID" Type="Int32" />
+          <NavigationProperty Name="TBLTRAVELS" Relationship="TatilSeyehatMVC5Model.FK_TBLTRAVELCOMMENTS_TBLTRAVELS" FromRole="TBLTRAVELCOMMENTS" ToRole="TBLTRAVELS" />
+        </EntityType>
+        <EntityType Name="TBLTRAVELS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TITLE" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMAGE" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TBLTRAVELCOMMENTS" Relationship="TatilSeyehatMVC5Model.FK_TBLTRAVELCOMMENTS_TBLTRAVELS" FromRole="TBLTRAVELS" ToRole="TBLTRAVELCOMMENTS" />
+        </EntityType>
+        <EntityContainer Name="TatilSeyehatMVC5Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBLABOUT" EntityType="Self.TBLABOUT" />
+          <EntitySet Name="TBLADMIN" EntityType="Self.TBLADMIN" />
+          <EntitySet Name="TBLBLOG" EntityType="Self.TBLBLOG" />
+          <EntitySet Name="TBLBLOGCOMMENTS" EntityType="Self.TBLBLOGCOMMENTS" />
+          <EntitySet Name="TBLCONTACT" EntityType="Self.TBLCONTACT" />
+          <EntitySet Name="TBLTRAVELCOMMENTS" EntityType="Self.TBLTRAVELCOMMENTS" />
+          <EntitySet Name="TBLTRAVELS" EntityType="Self.TBLTRAVELS" />
+          <AssociationSet Name="FK_TBLBLOGCOMMENTS_TBLBLOG" Association="TatilSeyehatMVC5Model.FK_TBLBLOGCOMMENTS_TBLBLOG">
+            <End Role="TBLBLOG" EntitySet="TBLBLOG" />
+            <End Role="TBLBLOGCOMMENTS" EntitySet="TBLBLOGCOMMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBLTRAVELCOMMENTS_TBLTRAVELS" Association="TatilSeyehatMVC5Model.FK_TBLTRAVELCOMMENTS_TBLTRAVELS">
+            <End Role="TBLTRAVELS" EntitySet="TBLTRAVELS" />
+            <End Role="TBLTRAVELCOMMENTS" EntitySet="TBLTRAVELCOMMENTS" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_TBLBLOGCOMMENTS_TBLBLOG">
+          <End Type="TatilSeyehatMVC5Model.TBLBLOG" Role="TBLBLOG" Multiplicity="0..1" />
+          <End Type="TatilSeyehatMVC5Model.TBLBLOGCOMMENTS" Role="TBLBLOGCOMMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBLBLOG">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBLBLOGCOMMENTS">
+              <PropertyRef Name="BLOGID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBLTRAVELCOMMENTS_TBLTRAVELS">
+          <End Type="TatilSeyehatMVC5Model.TBLTRAVELS" Role="TBLTRAVELS" Multiplicity="0..1" />
+          <End Type="TatilSeyehatMVC5Model.TBLTRAVELCOMMENTS" Role="TBLTRAVELCOMMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBLTRAVELS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TBLTRAVELCOMMENTS">
+              <PropertyRef Name="TRAVELSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TatilSeyehatMVC5ModelStoreContainer" CdmEntityContainer="TatilSeyehatMVC5Entities">
+          <EntitySetMapping Name="TBLABOUT">
+            <EntityTypeMapping TypeName="TatilSeyehatMVC5Model.TBLABOUT">
+              <MappingFragment StoreEntitySet="TBLABOUT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLADMIN">
+            <EntityTypeMapping TypeName="TatilSeyehatMVC5Model.TBLADMIN">
+              <MappingFragment StoreEntitySet="TBLADMIN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLBLOG">
+            <EntityTypeMapping TypeName="TatilSeyehatMVC5Model.TBLBLOG">
+              <MappingFragment StoreEntitySet="TBLBLOG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="DESCRIPTOIN" ColumnName="DESCRIPTOIN" />
+                <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLBLOGCOMMENTS">
+            <EntityTypeMapping TypeName="TatilSeyehatMVC5Model.TBLBLOGCOMMENTS">
+              <MappingFragment StoreEntitySet="TBLBLOGCOMMENTS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+                <ScalarProperty Name="COMMENT" ColumnName="COMMENT" />
+                <ScalarProperty Name="BLOGID" ColumnName="BLOGID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLCONTACT">
+            <EntityTypeMapping TypeName="TatilSeyehatMVC5Model.TBLCONTACT">
+              <MappingFragment StoreEntitySet="TBLCONTACT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="PHONE2" ColumnName="PHONE2" />
+                <ScalarProperty Name="EMAIL2" ColumnName="EMAIL2" />
+                <ScalarProperty Name="FAX2" ColumnName="FAX2" />
+                <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLTRAVELCOMMENTS">
+            <EntityTypeMapping TypeName="TatilSeyehatMVC5Model.TBLTRAVELCOMMENTS">
+              <MappingFragment StoreEntitySet="TBLTRAVELCOMMENTS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+                <ScalarProperty Name="COMMENT" ColumnName="COMMENT" />
+                <ScalarProperty Name="TRAVELSID" ColumnName="TRAVELSID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLTRAVELS">
+            <EntityTypeMapping TypeName="TatilSeyehatMVC5Model.TBLTRAVELS">
+              <MappingFragment StoreEntitySet="TBLTRAVELS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

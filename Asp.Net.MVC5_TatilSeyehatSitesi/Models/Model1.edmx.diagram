@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5efc3452cdb34ee28f1b1f137fc7737d" Name="Diagram1">
+        <EntityTypeShape EntityType="TatilSeyehatMVC5Model.TBLABOUT" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TatilSeyehatMVC5Model.TBLADMIN" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TatilSeyehatMVC5Model.TBLBLOG" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TatilSeyehatMVC5Model.TBLBLOGCOMMENTS" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TatilSeyehatMVC5Model.TBLCONTACT" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TatilSeyehatMVC5Model.TBLTRAVELCOMMENTS" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TatilSeyehatMVC5Model.TBLTRAVELS" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="TatilSeyehatMVC5Model.FK_TBLBLOGCOMMENTS_TBLBLOG" />
+        <AssociationConnector Association="TatilSeyehatMVC5Model.FK_TBLTRAVELCOMMENTS_TBLTRAVELS" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
