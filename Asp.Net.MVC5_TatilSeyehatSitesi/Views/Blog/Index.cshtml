@@ -1,0 +1,80 @@
+﻿@using Asp.Net.MVC5_TatilSeyehatSitesi.Models
+@using PagedList.Mvc
+@using PagedList
+@model TableList
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<link href="~/BlogTheme/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="~/BlogTheme/css/style.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!----webfonts---->
+<link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+<!----//webfonts---->
+<!--script-->
+<script type="text/javasc  ript" src="~/BlogTheme/js/move-top.js"></script>
+<script type="text/javascript" src="~/BlogTheme/js/easing.js"></script>
+
+
+<div class="content">
+    <div class="container">
+        <div class="content-grids">
+            <div class="col-md-8 content-main">
+                <div class="content-grid">
+                    @foreach (var x in Model.Blogs)
+                    {
+                        <div class="content-grid-info">
+                            <img src="~/image/@x.IMAGE" alt="@x.TITLE" />
+                            <div class="post-info">
+                                <h4><a href="single.html">@x.TITLE</a>  @x.DATE.Value.ToString("dd.MM.yyyy") / @x.TBLBLOGCOMMENTS.Count() Yorum</h4>
+                                <p>@x.DESCRIPTOIN.Substring(0, 150)</p>
+                                <a href="single.html"><span></span>Daha Fazla Oku</a>
+                            </div>
+                        </div>
+                    }
+                    <div style="display:flex; align-items:center; justify-content:center; width:100%; height:50px;">
+                        @Html.PagedListPager(Model.Blogs, page => Url.Action("Index", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 content-right">
+                <div class="recent">
+                    <h3>Random Post</h3>
+                    <ul>
+                        @foreach (var y in Model.Blogs.OrderBy(x => Guid.NewGuid()).Take(3))
+                        {
+                            <li><a href="#">@y.TITLE</a></li>
+                        }
+                    </ul>
+                </div>
+                <div class="comments">
+                    <h3>Blog Yorumları</h3>
+                    <ul>
+                        @if (Model.BlogComment.Any())
+                        {
+                            foreach (var z in Model.BlogComment.OrderBy(x => Guid.NewGuid()).Take(3))
+                            {
+                                <li><a href="#">@z.USERNAME</a> on <a href="#">@z.COMMENT</a></li>
+                            }
+                        }
+                        else
+                        {
+                            <li>Henüz yorum yok.</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!---->
