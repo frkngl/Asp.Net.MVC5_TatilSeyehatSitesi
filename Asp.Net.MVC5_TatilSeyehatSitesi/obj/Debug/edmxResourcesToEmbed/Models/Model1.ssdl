@@ -25,6 +25,7 @@
     <Property Name="DATE" Type="datetime" />
     <Property Name="DESCRIPTOIN" Type="nvarchar(max)" />
     <Property Name="IMAGE" Type="nvarchar" MaxLength="250" />
+    <Property Name="STATUS" Type="bit" />
   </EntityType>
   <EntityType Name="TBLBLOGCOMMENTS">
     <Key>
@@ -35,6 +36,8 @@
     <Property Name="MAIL" Type="nvarchar" MaxLength="250" />
     <Property Name="COMMENT" Type="nvarchar(max)" />
     <Property Name="BLOGID" Type="int" />
+    <Property Name="STATUS" Type="bit" />
+    <Property Name="DATE" Type="datetime" />
   </EntityType>
   <EntityType Name="TBLCONTACT">
     <Key>
@@ -60,6 +63,8 @@
     <Property Name="MAIL" Type="nvarchar" MaxLength="250" />
     <Property Name="COMMENT" Type="nvarchar(max)" />
     <Property Name="TRAVELSID" Type="int" />
+    <Property Name="STATUS" Type="bit" />
+    <Property Name="DATE" Type="datetime" />
   </EntityType>
   <EntityType Name="TBLTRAVELS">
     <Key>
@@ -70,6 +75,7 @@
     <Property Name="DATE" Type="datetime" />
     <Property Name="DESCRIPTION" Type="nvarchar(max)" />
     <Property Name="IMAGE" Type="nvarchar" MaxLength="250" />
+    <Property Name="STATUS" Type="bit" />
   </EntityType>
   <Association Name="FK_TBLBLOGCOMMENTS_TBLBLOG">
     <End Role="TBLBLOG" Type="Self.TBLBLOG" Multiplicity="0..1" />

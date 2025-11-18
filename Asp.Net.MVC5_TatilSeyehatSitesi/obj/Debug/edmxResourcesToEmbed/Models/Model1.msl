@@ -22,6 +22,7 @@
     <EntitySetMapping Name="TBLBLOG">
       <EntityTypeMapping TypeName="TatilSeyehatMVC5Model.TBLBLOG">
         <MappingFragment StoreEntitySet="TBLBLOG">
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="TITLE" ColumnName="TITLE" />
           <ScalarProperty Name="DATE" ColumnName="DATE" />
@@ -33,6 +34,8 @@
     <EntitySetMapping Name="TBLBLOGCOMMENTS">
       <EntityTypeMapping TypeName="TatilSeyehatMVC5Model.TBLBLOGCOMMENTS">
         <MappingFragment StoreEntitySet="TBLBLOGCOMMENTS">
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
           <ScalarProperty Name="MAIL" ColumnName="MAIL" />
@@ -60,6 +63,8 @@
     <EntitySetMapping Name="TBLTRAVELCOMMENTS">
       <EntityTypeMapping TypeName="TatilSeyehatMVC5Model.TBLTRAVELCOMMENTS">
         <MappingFragment StoreEntitySet="TBLTRAVELCOMMENTS">
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
           <ScalarProperty Name="MAIL" ColumnName="MAIL" />
@@ -71,6 +76,7 @@
     <EntitySetMapping Name="TBLTRAVELS">
       <EntityTypeMapping TypeName="TatilSeyehatMVC5Model.TBLTRAVELS">
         <MappingFragment StoreEntitySet="TBLTRAVELS">
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="TITLE" ColumnName="TITLE" />
           <ScalarProperty Name="DATE" ColumnName="DATE" />

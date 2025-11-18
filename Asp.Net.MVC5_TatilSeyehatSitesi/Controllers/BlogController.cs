@@ -9,7 +9,7 @@ using PagedList.Mvc;
 
 namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
 {
-    public class BlogController : Controller
+    public class BlogController : Controller 
     {
         TatilSeyehatMVC5Entities db = new TatilSeyehatMVC5Entities();
         TableList data = new TableList();
@@ -18,8 +18,8 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
         {
             int pageSize = 5;
             int pageNumber = (page ?? 1);
-            data.BlogsList = db.TBLBLOG.OrderByDescending(x => x.DATE).ToPagedList(pageNumber, pageSize);
-            data.BlogComment = db.TBLBLOGCOMMENTS.ToList();
+            data.BlogsList = db.TBLBLOG.Where(x=>x.STATUS == true).OrderByDescending(x => x.DATE).ToPagedList(pageNumber, pageSize);
+            data.BlogComment = db.TBLBLOGCOMMENTS.Where(x => x.STATUS == true).ToList();
             return View(data);
         }
 
@@ -31,8 +31,14 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
 
         public PartialViewResult BlogRightSideBar()
         {
-            data.Blog = db.TBLBLOG.ToList();
-            data.BlogComment = db.TBLBLOGCOMMENTS.ToList();
+            data.Blog = db.TBLBLOG.Where(x => x.STATUS == true).ToList();
+            data.BlogComment = db.TBLBLOGCOMMENTS.Where(x => x.STATUS == true).ToList();
+            return PartialView(data);
+        }
+
+        public PartialViewResult Comments(int id)
+        {
+            data.BlogComment = db.TBLBLOGCOMMENTS.Where(x => x.BLOGID == id && x.STATUS == true).ToList();
             return PartialView(data);
         }
     }

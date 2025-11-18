@@ -19,6 +19,8 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Models
         public string MAIL { get; set; }
         public string COMMENT { get; set; }
         public Nullable<int> BLOGID { get; set; }
+        public Nullable<bool> STATUS { get; set; }
+        public Nullable<System.DateTime> DATE { get; set; }
     
         public virtual TBLBLOG TBLBLOG { get; set; }
     }

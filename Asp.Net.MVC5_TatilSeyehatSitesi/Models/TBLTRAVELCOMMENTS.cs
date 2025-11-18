@@ -19,6 +19,8 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Models
         public string MAIL { get; set; }
         public string COMMENT { get; set; }
         public Nullable<int> TRAVELSID { get; set; }
+        public Nullable<bool> STATUS { get; set; }
+        public Nullable<System.DateTime> DATE { get; set; }
     
         public virtual TBLTRAVELS TBLTRAVELS { get; set; }
     }

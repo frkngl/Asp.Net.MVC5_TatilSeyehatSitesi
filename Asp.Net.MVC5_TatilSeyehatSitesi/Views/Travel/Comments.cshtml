@@ -1,0 +1,16 @@
+﻿@using Asp.Net.MVC5_TatilSeyehatSitesi.Models
+@model TableList
+
+@foreach (var z in Model.TravelComment.OrderByDescending(x => x.DATE))
+{
+    <ul class="comment-list">
+        <h5 class="post-author_head">@z.USERNAME <a href="#" title="Posts by admin" rel="author">@z.DATE.Value.ToString("dd.MM.yyyy")</a></h5>
+        <li>
+            <img src="~/BlogTheme/images/avatar.png" class="img-responsive" alt="">
+            <div class="desc">
+                <p>@z.COMMENT</p>
+            </div>
+            <div class="clearfix"></div>
+        </li>
+    </ul>
+}

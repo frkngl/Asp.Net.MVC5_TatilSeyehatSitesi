@@ -25,6 +25,7 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Models
         public Nullable<System.DateTime> DATE { get; set; }
         public string DESCRIPTOIN { get; set; }
         public string IMAGE { get; set; }
+        public Nullable<bool> STATUS { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBLBLOGCOMMENTS> TBLBLOGCOMMENTS { get; set; }

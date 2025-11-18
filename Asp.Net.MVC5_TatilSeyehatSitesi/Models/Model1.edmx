@@ -30,6 +30,7 @@
           <Property Name="DATE" Type="datetime" />
           <Property Name="DESCRIPTOIN" Type="nvarchar(max)" />
           <Property Name="IMAGE" Type="nvarchar" MaxLength="250" />
+          <Property Name="STATUS" Type="bit" />
         </EntityType>
         <EntityType Name="TBLBLOGCOMMENTS">
           <Key>
@@ -40,6 +41,8 @@
           <Property Name="MAIL" Type="nvarchar" MaxLength="250" />
           <Property Name="COMMENT" Type="nvarchar(max)" />
           <Property Name="BLOGID" Type="int" />
+          <Property Name="STATUS" Type="bit" />
+          <Property Name="DATE" Type="datetime" />
         </EntityType>
         <EntityType Name="TBLCONTACT">
           <Key>
@@ -65,6 +68,8 @@
           <Property Name="MAIL" Type="nvarchar" MaxLength="250" />
           <Property Name="COMMENT" Type="nvarchar(max)" />
           <Property Name="TRAVELSID" Type="int" />
+          <Property Name="STATUS" Type="bit" />
+          <Property Name="DATE" Type="datetime" />
         </EntityType>
         <EntityType Name="TBLTRAVELS">
           <Key>
@@ -75,6 +80,7 @@
           <Property Name="DATE" Type="datetime" />
           <Property Name="DESCRIPTION" Type="nvarchar(max)" />
           <Property Name="IMAGE" Type="nvarchar" MaxLength="250" />
+          <Property Name="STATUS" Type="bit" />
         </EntityType>
         <Association Name="FK_TBLBLOGCOMMENTS_TBLBLOG">
           <End Role="TBLBLOG" Type="Self.TBLBLOG" Multiplicity="0..1" />
@@ -147,6 +153,7 @@
           <Property Name="DESCRIPTOIN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IMAGE" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="TBLBLOGCOMMENTS" Relationship="TatilSeyehatMVC5Model.FK_TBLBLOGCOMMENTS_TBLBLOG" FromRole="TBLBLOG" ToRole="TBLBLOGCOMMENTS" />
+          <Property Name="STATUS" Type="Boolean" />
         </EntityType>
         <EntityType Name="TBLBLOGCOMMENTS">
           <Key>
@@ -158,6 +165,8 @@
           <Property Name="COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="BLOGID" Type="Int32" />
           <NavigationProperty Name="TBLBLOG" Relationship="TatilSeyehatMVC5Model.FK_TBLBLOGCOMMENTS_TBLBLOG" FromRole="TBLBLOGCOMMENTS" ToRole="TBLBLOG" />
+          <Property Name="STATUS" Type="Boolean" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="TBLCONTACT">
           <Key>
@@ -184,6 +193,8 @@
           <Property Name="COMMENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TRAVELSID" Type="Int32" />
           <NavigationProperty Name="TBLTRAVELS" Relationship="TatilSeyehatMVC5Model.FK_TBLTRAVELCOMMENTS_TBLTRAVELS" FromRole="TBLTRAVELCOMMENTS" ToRole="TBLTRAVELS" />
+          <Property Name="STATUS" Type="Boolean" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="TBLTRAVELS">
           <Key>
@@ -195,6 +206,7 @@
           <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IMAGE" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="TBLTRAVELCOMMENTS" Relationship="TatilSeyehatMVC5Model.FK_TBLTRAVELCOMMENTS_TBLTRAVELS" FromRole="TBLTRAVELS" ToRole="TBLTRAVELCOMMENTS" />
+          <Property Name="STATUS" Type="Boolean" />
         </EntityType>
         <EntityContainer Name="TatilSeyehatMVC5Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TBLABOUT" EntityType="Self.TBLABOUT" />
@@ -264,6 +276,7 @@
           <EntitySetMapping Name="TBLBLOG">
             <EntityTypeMapping TypeName="TatilSeyehatMVC5Model.TBLBLOG">
               <MappingFragment StoreEntitySet="TBLBLOG">
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TITLE" ColumnName="TITLE" />
                 <ScalarProperty Name="DATE" ColumnName="DATE" />
@@ -275,6 +288,8 @@
           <EntitySetMapping Name="TBLBLOGCOMMENTS">
             <EntityTypeMapping TypeName="TatilSeyehatMVC5Model.TBLBLOGCOMMENTS">
               <MappingFragment StoreEntitySet="TBLBLOGCOMMENTS">
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
                 <ScalarProperty Name="MAIL" ColumnName="MAIL" />
@@ -302,6 +317,8 @@
           <EntitySetMapping Name="TBLTRAVELCOMMENTS">
             <EntityTypeMapping TypeName="TatilSeyehatMVC5Model.TBLTRAVELCOMMENTS">
               <MappingFragment StoreEntitySet="TBLTRAVELCOMMENTS">
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
                 <ScalarProperty Name="MAIL" ColumnName="MAIL" />
@@ -313,6 +330,7 @@
           <EntitySetMapping Name="TBLTRAVELS">
             <EntityTypeMapping TypeName="TatilSeyehatMVC5Model.TBLTRAVELS">
               <MappingFragment StoreEntitySet="TBLTRAVELS">
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TITLE" ColumnName="TITLE" />
                 <ScalarProperty Name="DATE" ColumnName="DATE" />

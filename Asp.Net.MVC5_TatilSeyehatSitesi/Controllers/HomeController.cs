@@ -12,10 +12,14 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
     public class HomeController : Controller
     {
         TatilSeyehatMVC5Entities db = new TatilSeyehatMVC5Entities();
+        TableList data = new TableList();
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            data.Blog = db.TBLBLOG.Where(x => x.STATUS == true).ToList();
+            data.About = db.TBLABOUT.ToList();
+            data.Travel = db.TBLTRAVELS.Where(x => x.STATUS == true).OrderByDescending(x=>x.DATE).ToList();
+            return View(data);
         }
 
         //Veritabanı işlemleri G/Ç Yoğun olduğu için, uygulamanızın gelecekteki performansını ve ölçeklenebilirliğini sağlamak adına async Task<ActionResult> yapısı kullanılır.

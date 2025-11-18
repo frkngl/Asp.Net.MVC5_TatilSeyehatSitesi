@@ -40,16 +40,7 @@
                     </p>
                 </div>
             }
-            <ul class="comment-list">
-                <h5 class="post-author_head">Yazan Kişi <a href="#" title="Posts by admin" rel="author">Admin</a></h5>
-                <li>
-                    <img src="~/BlogTheme/images/avatar.png" class="img-responsive" alt="">
-                    <div class="desc">
-                        <p>Site Yazarı: <a href="#" title="Posts by admin" rel="author">Admin</a></p>
-                    </div>
-                    <div class="clearfix"></div>
-                </li>
-            </ul>
+            @Html.Action("Comments", "Blog")
             <div class="content-form">
                 <h3>Yorum Yazın</h3>
                 <form>
