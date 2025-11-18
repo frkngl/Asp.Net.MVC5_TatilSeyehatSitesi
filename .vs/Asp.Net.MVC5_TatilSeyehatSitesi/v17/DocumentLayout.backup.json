@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\frkng\\Desktop\\GitHub\\Asp.Net.MVC5_TatilSeyehatSitesi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|c:\\users\\frkng\\desktop\\github\\asp.net.mvc5_tatilseyehatsitesi\\asp.net.mvc5_tatilseyehatsitesi\\views\\blog\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|solutionrelative:asp.net.mvc5_tatilseyehatsitesi\\views\\blog\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|c:\\users\\frkng\\desktop\\github\\asp.net.mvc5_tatilseyehatsitesi\\asp.net.mvc5_tatilseyehatsitesi\\models\\tablelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|solutionrelative:asp.net.mvc5_tatilseyehatsitesi\\models\\tablelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|c:\\users\\frkng\\desktop\\github\\asp.net.mvc5_tatilseyehatsitesi\\asp.net.mvc5_tatilseyehatsitesi\\views\\blog\\blogdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|solutionrelative:asp.net.mvc5_tatilseyehatsitesi\\views\\blog\\blogdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BBE2FEBE-E2D7-4CFB-96F2-96ADE6AA9D94}|Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi.csproj|c:\\users\\frkng\\desktop\\github\\asp.net.mvc5_tatilseyehatsitesi\\asp.net.mvc5_tatilseyehatsitesi\\controllers\\blogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,45 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TableList.cs",
-              "DocumentMoniker": "C:\\Users\\frkng\\Desktop\\GitHub\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Models\\TableList.cs",
-              "RelativeDocumentMoniker": "Asp.Net.MVC5_TatilSeyehatSitesi\\Models\\TableList.cs",
-              "ToolTip": "C:\\Users\\frkng\\Desktop\\GitHub\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Models\\TableList.cs",
-              "RelativeToolTip": "Asp.Net.MVC5_TatilSeyehatSitesi\\Models\\TableList.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T08:19:20.507Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\frkng\\Desktop\\GitHub\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Blog\\Index.cshtml",
-              "RelativeDocumentMoniker": "Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Blog\\Index.cshtml",
-              "ToolTip": "C:\\Users\\frkng\\Desktop\\GitHub\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Blog\\Index.cshtml",
-              "RelativeToolTip": "Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Blog\\Index.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACAAAAAzAAAAAAAAAA==",
+              "Title": "BlogDetail.cshtml",
+              "DocumentMoniker": "C:\\Users\\frkng\\Desktop\\GitHub\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Blog\\BlogDetail.cshtml",
+              "RelativeDocumentMoniker": "Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Blog\\BlogDetail.cshtml",
+              "ToolTip": "C:\\Users\\frkng\\Desktop\\GitHub\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Blog\\BlogDetail.cshtml",
+              "RelativeToolTip": "Asp.Net.MVC5_TatilSeyehatSitesi\\Views\\Blog\\BlogDetail.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAgwCYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-18T07:58:31.065Z",
+              "WhenOpened": "2025-11-18T10:34:35.234Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "BlogController.cs",
               "DocumentMoniker": "C:\\Users\\frkng\\Desktop\\GitHub\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Controllers\\BlogController.cs",
               "RelativeDocumentMoniker": "Asp.Net.MVC5_TatilSeyehatSitesi\\Controllers\\BlogController.cs",
               "ToolTip": "C:\\Users\\frkng\\Desktop\\GitHub\\Asp.Net.MVC5_TatilSeyehatSitesi\\Asp.Net.MVC5_TatilSeyehatSitesi\\Controllers\\BlogController.cs",
               "RelativeToolTip": "Asp.Net.MVC5_TatilSeyehatSitesi\\Controllers\\BlogController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwBoAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T07:58:28.329Z",
+              "WhenOpened": "2025-11-18T10:34:29.255Z",
               "EditorCaption": ""
             }
           ]

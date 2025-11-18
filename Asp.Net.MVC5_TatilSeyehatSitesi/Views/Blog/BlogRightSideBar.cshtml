@@ -1,0 +1,30 @@
+﻿@using Asp.Net.MVC5_TatilSeyehatSitesi.Models
+@model TableList
+<div class="col-md-4 side-content">
+    <div class="recent">
+        <h3>Random Post</h3>
+        <ul>
+            @foreach (var y in Model.Blog.OrderBy(x => Guid.NewGuid()).Take(3))
+            {
+                <li><a href="/Blog/BlogDetail/@y.ID">@y.TITLE</a></li>
+            }
+        </ul>
+    </div>
+    <div class="comments">
+        <h3>Blog Yorumları</h3>
+        <ul>
+            @if (Model.BlogComment.Any())
+            {
+                foreach (var z in Model.BlogComment.OrderBy(x => Guid.NewGuid()).Take(3))
+                {
+                    <li><a href="#">@z.USERNAME</a> on <a href="#">@z.COMMENT</a></li>
+                }
+            }
+            else
+            {
+                <li>Henüz yorum yok.</li>
+            }
+        </ul>
+    </div>
+</div>
+<div class="clearfix"></div>

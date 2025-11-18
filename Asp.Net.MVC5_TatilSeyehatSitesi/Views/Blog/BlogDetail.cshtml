@@ -1,0 +1,68 @@
+﻿@using Asp.Net.MVC5_TatilSeyehatSitesi.Models
+@model TableList
+
+@{
+    ViewBag.Title = "BlogDetail";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<link href="~/BlogTheme/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="~/BlogTheme/css/style.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!----webfonts---->
+<link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+<!----//webfonts---->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!--end slider -->
+<!--script-->
+<script type="text/javascript" src="~/BlogTheme/js/move-top.js"></script>
+<script type="text/javascript" src="~/BlogTheme/js/easing.js"></script>
+<!---header---->
+<!--/header-->
+<div class="single">
+    <div class="container">
+        <div class="col-md-8 single-main">
+            @foreach (var x in Model.Blog)
+            {
+                <div class="single-grid">
+                    <img src="~/image/@x.IMAGE" alt="@x.TITLE" />
+                    <h2>
+                        @x.TITLE
+                    </h2>
+                    <p>
+                        @x.DESCRIPTOIN
+                    </p>
+                </div>
+            }
+            <ul class="comment-list">
+                <h5 class="post-author_head">Yazan Kişi <a href="#" title="Posts by admin" rel="author">Admin</a></h5>
+                <li>
+                    <img src="~/BlogTheme/images/avatar.png" class="img-responsive" alt="">
+                    <div class="desc">
+                        <p>Site Yazarı: <a href="#" title="Posts by admin" rel="author">Admin</a></p>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+            </ul>
+            <div class="content-form">
+                <h3>Yorum Yazın</h3>
+                <form>
+                    <input type="text" placeholder="Ad Soyad" required />
+                    <input type="text" placeholder="Mail" required />
+                    <input type="text" placeholder="Telefon" required />
+                    <textarea placeholder="Mesaj"></textarea>
+                    <input type="submit" value="Gönder" />
+                </form>
+            </div>
+        </div>
+
+        @Html.Action("BlogRightSideBar", "Blog")
+    </div>
+</div>
+<!---->

@@ -18,9 +18,22 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
         {
             int pageSize = 5;
             int pageNumber = (page ?? 1);
-            data.Blogs = db.TBLBLOG.OrderByDescending(x => x.DATE).ToPagedList(pageNumber, pageSize);
+            data.BlogsList = db.TBLBLOG.OrderByDescending(x => x.DATE).ToPagedList(pageNumber, pageSize);
             data.BlogComment = db.TBLBLOGCOMMENTS.ToList();
             return View(data);
+        }
+
+        public ActionResult BlogDetail(int id)
+        { 
+            data.Blog = db.TBLBLOG.Where(x=>x.ID == id).ToList();
+            return View(data);
+        }
+
+        public PartialViewResult BlogRightSideBar()
+        {
+            data.Blog = db.TBLBLOG.ToList();
+            data.BlogComment = db.TBLBLOGCOMMENTS.ToList();
+            return PartialView(data);
         }
     }
 }

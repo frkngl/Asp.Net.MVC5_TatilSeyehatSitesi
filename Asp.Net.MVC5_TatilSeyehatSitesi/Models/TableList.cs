@@ -8,7 +8,8 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Models
 {
     public class TableList
     {
-        public IPagedList<TBLBLOG> Blogs { get; set; }
+        public IPagedList<TBLBLOG> BlogsList { get; set; }
+        public List<TBLBLOG> Blog { get; set; }
         public List<TBLBLOGCOMMENTS> BlogComment { get; set; }
     }
 }
