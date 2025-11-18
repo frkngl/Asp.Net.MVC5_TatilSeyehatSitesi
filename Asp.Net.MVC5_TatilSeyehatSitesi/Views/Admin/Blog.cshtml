@@ -1,0 +1,147 @@
+﻿﻿﻿@using Asp.Net.MVC5_TatilSeyehatSitesi.Models
+@using PagedList.Mvc
+@using PagedList
+@model TableList
+
+@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    .pagination {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        padding: 20px 0;
+        color: #fff;
+    }
+
+        .pagination li {
+            list-style: none;
+        }
+
+            .pagination li a,
+            .pagination li span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 8px;
+                background: #111;
+                color: orange;
+                font-weight: 600;
+                transition: 0.3s ease;
+                text-decoration: none;
+                border: 1px solid #333;
+            }
+
+                .pagination li a:hover {
+                    background: #ff7f00;
+                    color: black;
+                    border-color: #ff7f00;
+                }
+
+        /* Aktif sayfa */
+        .pagination .active span {
+            background: #ff7f00 !important;
+            border-color: #ff7f00 !important;
+            color: #fff !important;
+        }
+
+        /* Devre dışı */
+        .pagination .disabled span {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+</style>
+<link rel="stylesheet" href="~/Content/toastr.min.css" type="text/css" />
+<script src="~/Scripts/jquery-3.7.1.min.js"></script>
+<script src="~/Scripts/toastr.min.js"></script>
+
+<div style="display:flex; flex-direction:column; margin:0 auto;">
+    <a class="btn btn-primary" href="/Admin/AddBlog">YENİ BLOG EKLE</a>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>RESİM</th>
+            <th>BAŞLIK</th>
+            <th>TARİH</th>
+            <th>AÇIKLAMA</th>
+            <th>DURUM</th>
+            <th>GÜNCELLE</th>
+            <th>SİL</th>
+        </tr>
+        @foreach (var x in Model.BlogsList)
+        {
+            <tr>
+                <th>@x.ID</th>
+                <th><img style="border-radius:0px; width:100px; height:auto; object-fit:cover;" src="~/image/@x.IMAGE"></th>
+                <th>@x.TITLE</th>
+                <th>@x.DATE.Value.ToString("dd.MM.yyyy")</th>
+                <th>@x.DESCRIPTOIN.Substring(0, 150) ...</th>
+                <th><a class="btn btn-success" href="/Admin/BlogUpdate/@x.ID">AKTİF</a></th>
+                <th><a class="btn btn-warning" href="/Admin/BlogUpdate/@x.ID">GÜNCELLE</a></th>
+                <td>@Html.ActionLink("Sil", "DeleteBlog", new { id = x.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istediğinize emin misiniz');" })</td>
+            </tr>
+        }
+    </table>
+    <div style="display:flex; align-items:center; justify-content:center; width:100%; height:50px;">
+        @Html.PagedListPager(
+    Model.BlogsList,
+    page => Url.Action("Blog", new { page }),
+    PagedListRenderOptions.ClassicPlusFirstAndLast
+)
+    </div>
+</div>
+
+
+@if (TempData["success"] != null)
+{
+    <script>
+        toastr["success"]("Blog ekleme işlemi başarıyla gerçekleşti.")
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    </script>
+}
+
+@if (TempData["error"] != null)
+{
+    <script>
+        toastr["error"]("Blog ekleme işleminde bir hata oluştu. Lütfen tekrar deneyiniz.")
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    </script>
+}
+

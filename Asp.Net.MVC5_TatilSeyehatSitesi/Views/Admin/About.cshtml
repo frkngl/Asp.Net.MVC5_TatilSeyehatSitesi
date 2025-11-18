@@ -1,0 +1,98 @@
+﻿@model Asp.Net.MVC5_TatilSeyehatSitesi.Models.TBLABOUT
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/Content/toastr.min.css" />
+<script src="~/Scripts/jquery-3.7.1.min.js"></script>
+<script src="~/Scripts/toastr.min.js"></script>
+
+<div style="display:flex;flex-direction:column; margin:0 auto;">
+    <h2 style="display:flex; justify-content:center;">Hakkımda Güncelleme</h2>
+    <br />
+    @using (Html.BeginForm("AboutSave", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <form class="form-group d-flex flex-column ">
+            <div style="margin:0px 20px 0px 20px; display: none;">
+                @Html.LabelFor(x => x.ID, new { @style = "margin-top:5px; font-size:20px;", required = "required" })
+                @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @style = "width:100%; height:30px;", @readonly = "readonly" })
+            </div>
+            <br />
+            <div style="margin:0px 20px 0px 20px;">
+                HAKKIMIZDA
+                @Html.TextAreaFor(x => x.DESCRIPTION, new { @class = "form-control", @style = "width:100%; height:200px;", required = "required" })
+            </div>
+            <br />
+            <div style="margin:0px 20px 0px 20px;">
+                RESİM
+                <br />
+                <input class="form-control"
+                       id="resim"
+                       type="file"
+                       onchange="$('.resim')[0].src = window.URL.createObjectURL(this.files[0])"
+                       name="BlogImage" />
+                <br />
+                <img class="resim"
+                     width="335"
+                     height="320"
+                     style="border:1px solid red; object-fit:cover;"
+                     src="~/image/@Model.IMAGE" />
+            </div>
+            <div style="margin:10px 0px 0px 20px;">
+                <button class="btn btn-primary" style="width:95%;">Kaydet</button>
+            </div>
+        </form>
+    }
+</div>
+
+@if (TempData["success"] != null)
+{
+    <script>
+        toastr["success"]("Güncelleme işlemi başarıyla gerçekleşti.")
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    </script>
+}
+
+@if (TempData["error"] != null)
+{
+    <script>
+        toastr["error"]("Güncelleme işleminde bir hata oluştu. Lütfen tekrar deneyiniz.")
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    </script>
+}
+
+

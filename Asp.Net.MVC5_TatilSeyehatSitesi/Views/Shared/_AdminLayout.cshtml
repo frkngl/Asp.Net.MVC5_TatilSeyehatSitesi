@@ -5,21 +5,32 @@
 
 <!DOCTYPE html>
 <html>
-<title>W3.CSS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="~/Content/Admin.css" />
+<head>
+    <title>W3.CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/Content/Admin.css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
 <body>
     <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:10%">
         <h3 class="w3-bar-item">Menu</h3>
-        <a href="#" class="w3-bar-item w3-button">Anasayfa</a>
-        <a href="#" class="w3-bar-item w3-button">Hakkımızda</a>
-        <a href="#" class="w3-bar-item w3-button">Bloglar</a>
+        <a href="/Admin/Index" class="w3-bar-item w3-button">Anasayfa</a>
+        <a href="/Admin/About" class="w3-bar-item w3-button">Hakkımızda</a>
+        <a href="/Admin/Blog" class="w3-bar-item w3-button">Bloglar</a>
         <a href="#" class="w3-bar-item w3-button">Blog Yorumları</a>
         <a href="#" class="w3-bar-item w3-button">Seyahatler</a>
         <a href="#" class="w3-bar-item w3-button">Seyahat Yorumları</a>
         <a href="#" class="w3-bar-item w3-button">İletişim</a>
-        <a href="#" class="w3-bar-item w3-button">Çıkış</a>
+        <a href="/Login/SignOut" class="w3-bar-item w3-button">Çıkış</a>
     </div>
-    @RenderBody()
+    <div style="margin-left:10%">
+
+        <div class="w3-container w3-teal">
+            <h1>Admin Panel Yönetim Kısmı</h1>
+        </div>
+        @RenderBody()
+    </div>
+
 </body>
 </html>
+<script src="~/Scripts/bootstrap.bundle.min.js"></script>
