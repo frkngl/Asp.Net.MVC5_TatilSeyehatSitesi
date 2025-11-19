@@ -356,100 +356,100 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
         }
 
 
-        //public ActionResult UpdateBlog(int id)
-        //{
-        //    var degerler = db.TBLBLOG.Find(id);
-        //    return View("UpdateBlog", degerler);
-        //}
+        public ActionResult UpdateTravel(int id)
+        {
+            var degerler = db.TBLTRAVELS.Find(id);
+            return View("UpdateTravel", degerler);
+        }
 
-        //[HttpPost]
-        //public ActionResult UpdateBlogSave(TBLBLOG UpdateBlog, HttpPostedFileBase BlogImage)
-        //{
-        //    var update = db.TBLBLOG.Find(UpdateBlog.ID);
-        //    try
-        //    {
-        //        if (BlogImage != null && BlogImage.ContentLength > 0)
-        //        {
-        //            if (BlogImage.ContentType == "image/jpeg" || BlogImage.ContentType == "image/png" || BlogImage.ContentType == "image/jpg" || BlogImage.ContentType == "image/jfif")
-        //            {
-        //                var lane = Request.MapPath("~/image/" + update.IMAGE);
-        //                if (System.IO.File.Exists(lane))
-        //                {
-        //                    System.IO.File.Delete(lane);
-        //                }
+        [HttpPost]
+        public ActionResult UpdateTravelSave(TBLTRAVELS UpdateTravel, HttpPostedFileBase TravelImage)
+        {
+            var update = db.TBLTRAVELS.Find(UpdateTravel.ID);
+            try
+            {
+                if (TravelImage != null && TravelImage.ContentLength > 0)
+                {
+                    if (TravelImage.ContentType == "image/jpeg" || TravelImage.ContentType == "image/png" || TravelImage.ContentType == "image/jpg" || TravelImage.ContentType == "image/jfif")
+                    {
+                        var lane = Request.MapPath("~/image/" + update.IMAGE);
+                        if (System.IO.File.Exists(lane))
+                        {
+                            System.IO.File.Delete(lane);
+                        }
 
-        //                var fi = new FileInfo(BlogImage.FileName);
-        //                var fileName = Path.GetFileName(BlogImage.FileName);
-        //                fileName = Guid.NewGuid().ToString() + fi.Extension;
-        //                var path = Path.Combine(Server.MapPath("~/image/"), fileName);
+                        var fi = new FileInfo(TravelImage.FileName);
+                        var fileName = Path.GetFileName(TravelImage.FileName);
+                        fileName = Guid.NewGuid().ToString() + fi.Extension;
+                        var path = Path.Combine(Server.MapPath("~/image/"), fileName);
 
 
-        //                WebImage rr = new WebImage(BlogImage.InputStream);
+                        WebImage rr = new WebImage(TravelImage.InputStream);
 
-        //                if (rr.Width > 1000)
+                        if (rr.Width > 1000)
 
-        //                    rr.Resize(800, 800);
-        //                rr.Save(path);
-        //                update.IMAGE = fileName;
-        //            }
-        //            else
-        //            {
-        //                TempData["error3"] = "Lütfem resim formatında bir dosya seçiniz!!!";
-        //                return RedirectToAction("Blog");
-        //            }
-        //        }
-        //        update.TITLE = UpdateBlog.TITLE;
-        //        update.DESCRIPTOIN = UpdateBlog.DESCRIPTOIN;
-        //        db.SaveChanges();
-        //        TempData["success2"] = "Blog başarıyla güncellenmiştir.";
-        //        return RedirectToAction("Blog");
-        //    }
-        //    catch (Exception)
-        //    {
-        //        TempData["error2"] = "Blog güncellenirken bir hata oluştu. Lütfen tekrar deneyiniz.";
-        //        return RedirectToAction("Blog");
-        //    }
-        //}
+                            rr.Resize(800, 800);
+                        rr.Save(path);
+                        update.IMAGE = fileName;
+                    }
+                    else
+                    {
+                        TempData["error3"] = "Lütfem resim formatında bir dosya seçiniz!!!";
+                        return RedirectToAction("Blog");
+                    }
+                }
+                update.TITLE = UpdateTravel.TITLE;
+                update.DESCRIPTION = UpdateTravel.DESCRIPTION;
+                db.SaveChanges();
+                TempData["success2"] = "Seyahat başarıyla güncellenmiştir.";
+                return RedirectToAction("Travel");
+            }
+            catch (Exception)
+            {
+                TempData["error2"] = "Seyahat güncellenirken bir hata oluştu. Lütfen tekrar deneyiniz.";
+                return RedirectToAction("Travel");
+            }
+        }
 
-        //public ActionResult DeleteBlog(int id)
-        //{
-        //    var DeleteBlog = db.TBLBLOG.Find(id);
-        //    try
-        //    {
-        //        var lane = Request.MapPath("~/image/" + DeleteBlog.IMAGE);
-        //        if (System.IO.File.Exists(lane))
-        //        {
-        //            System.IO.File.Delete(lane);
-        //        }
-        //        db.TBLBLOG.Remove(DeleteBlog);
-        //        db.SaveChanges();
-        //        TempData["success3"] = "Blog başarıyla silinmiştir.";
-        //        return RedirectToAction("Blog");
-        //    }
-        //    catch (Exception)
-        //    {
-        //        TempData["error4"] = "Blog silinirken bir hata oluştu. Lütfen tekrar deneyiniz.";
-        //        return RedirectToAction("Blog");
-        //    }
-        //}
+        public ActionResult DeleteTravel(int id)
+        {
+            var DeleteTravel = db.TBLTRAVELS.Find(id);
+            try
+            {
+                var lane = Request.MapPath("~/image/" + DeleteTravel.IMAGE);
+                if (System.IO.File.Exists(lane))
+                {
+                    System.IO.File.Delete(lane);
+                }
+                db.TBLTRAVELS.Remove(DeleteTravel);
+                db.SaveChanges();
+                TempData["success3"] = "Seyahat başarıyla silinmiştir.";
+                return RedirectToAction("Travel");
+            }
+            catch (Exception)
+            {
+                TempData["error4"] = "Seyahat silinirken bir hata oluştu. Lütfen tekrar deneyiniz.";
+                return RedirectToAction("Travel");
+            }
+        }
 
-        //public ActionResult BlogStatus(int id)
-        //{
-        //    try
-        //    {
-        //        var blog = db.TBLBLOG.Find(id);
-        //        bool current = blog.STATUS.GetValueOrDefault(false);
-        //        blog.STATUS = !current;
-        //        db.SaveChanges();
-        //        TempData["success4"] = blog.STATUS == true ? "Blog aktif hale getirildi." : "Blog pasif (yayından kaldırıldı).";
-        //        return RedirectToAction("Blog");
-        //    }
-        //    catch (Exception)
-        //    {
-        //        TempData["error5"] = "Durum güncellenirken bir hata oluştu.";
-        //        return RedirectToAction("Blog");
-        //    }
-        //}
+        public ActionResult TravelStatus(int id)
+        {
+            try
+            {
+                var travel = db.TBLTRAVELS.Find(id);
+                bool current = travel.STATUS.GetValueOrDefault(false);
+                travel.STATUS = !current;
+                db.SaveChanges();
+                TempData["success4"] = travel.STATUS == true ? "Seyahat aktif hale getirildi." : "Seyahat pasif (yayından kaldırıldı).";
+                return RedirectToAction("Travel");
+            }
+            catch (Exception)
+            {
+                TempData["error5"] = "Durum güncellenirken bir hata oluştu.";
+                return RedirectToAction("Travel");
+            }
+        }
         //-------------------------BLOG PAGE-------------------------//
     }
 }

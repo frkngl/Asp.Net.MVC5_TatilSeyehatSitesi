@@ -88,8 +88,9 @@
             </tr>
         }
     </table>
-    <div style="display:flex; align-items:center; justify-content:center; width:100%; height:50px;">@Html.PagedListPager(Model.TravelList,page => Url.Action("Travel", new { page }),PagedListRenderOptions.ClassicPlusFirstAndLast)
-    </div>
+    <div style="display:flex; align-items:center; justify-content:center; width:100%; height:50px;">
+        @Html.PagedListPager(Model.TravelList, page => Url.Action("Travel", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+</div>
 </div>
 
 

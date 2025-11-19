@@ -1,0 +1,54 @@
+﻿@model Asp.Net.MVC5_TatilSeyehatSitesi.Models.TBLTRAVELS
+@{
+    ViewBag.Title = "UpdateTravel";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/toastr.min.css" type="text/css" />
+<script src="~/Scripts/jquery-3.7.1.min.js"></script>
+<script src="~/Scripts/toastr.min.js"></script>
+
+<div style="display:flex; flex-direction:column; margin:0 auto;">
+    <h2 style="display:flex; justify-content:center;">Seyahat Güncelleme</h2>
+    <br />
+    @using (Html.BeginForm("UpdateTravelSave", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <form class="form-group d-flex flex-column ">
+            <div style="margin:0px 20px 0px 20px;">
+                @Html.LabelFor(x => x.ID, new { @style = "margin-top:5px;   font-size:20px;", required = "required" })
+                @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @style = "width:100%; height:30px;", @readonly = "readonly" })
+            </div>
+            <br />
+            <div style="margin:0px 20px 0px 20px;">
+                @Html.LabelFor(x => x.TITLE, new { @style = "margin-top:5px;   font-size:20px;", required = "required" })
+                @Html.TextBoxFor(x => x.TITLE, new { @style = "width:100%; height:30px;", required = "required" })
+            </div>
+            <br />
+            <div style="margin:0px 20px 0px 20px;">
+                @Html.LabelFor(x => x.DESCRIPTION, new { @style = "margin-top:5px;   font-size:20px;", required = "required" })
+                @Html.TextAreaFor(x => x.DESCRIPTION, new { @style = "width:100%; height:200px;", required = "required" })
+            </div>
+            <br />
+            <div style="margin:0px 20px 0px 20px;">
+                @Html.LabelFor(x => x.IMAGE, new { @style = "margin-top:5px;   font-size:20px;", required = "required" })
+                <br />
+                <input class="form-control"
+                       id="resim"
+                       type="file"
+                       onchange="$('.resim')[0].src = window.URL.createObjectURL(this.files[0])"
+                       name="TravelImage" />
+                <br />
+                <img class="resim"
+                     width="335"
+                     height="320"
+                     style="border:1px solid red; object-fit:cover;"
+                     src="~/image/@Model.IMAGE" />
+            </div>
+            <div style="margin:10px 0px 0px 20px;">
+                <button class="btn btn-primary" style="width:95%;">Kaydet</button>
+            </div>
+
+        </form>
+    }
+</div>
+
