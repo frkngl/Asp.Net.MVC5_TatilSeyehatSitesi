@@ -449,6 +449,7 @@
     <Content Include="Views\Admin\Blog.cshtml" />
     <Content Include="Views\Admin\AddBlog.cshtml" />
     <Content Include="Views\Admin\UpdateBlog.cshtml" />
+    <Content Include="Views\Blog\Comment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

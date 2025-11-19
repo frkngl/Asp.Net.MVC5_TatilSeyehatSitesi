@@ -64,7 +64,6 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>ID</th>
             <th>RESİM</th>
             <th>BAŞLIK</th>
             <th>TARİH</th>
@@ -76,7 +75,6 @@
         @foreach (var x in Model.BlogsList)
         {
             <tr>
-                <th>@x.ID</th>
                 <th><img style="border-radius:0px; width:100px; height:auto; object-fit:cover;" src="~/image/@x.IMAGE"></th>
                 <th>@x.TITLE</th>
                 <th>@x.DATE.Value.ToString("dd.MM.yyyy")</th>

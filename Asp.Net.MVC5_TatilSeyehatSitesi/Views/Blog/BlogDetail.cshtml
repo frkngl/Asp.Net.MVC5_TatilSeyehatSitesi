@@ -6,7 +6,8 @@
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
-
+<link rel="stylesheet" href="~/Content/toastr.min.css" />
+<script src="~/Scripts/toastr.min.js"></script>
 <link href="~/BlogTheme/css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="~/BlogTheme/css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,6 +24,7 @@
 <!--script-->
 <script type="text/javascript" src="~/BlogTheme/js/move-top.js"></script>
 <script type="text/javascript" src="~/BlogTheme/js/easing.js"></script>
+<script src="~/Scripts/jquery-3.7.1.min.js"></script>
 <!---header---->
 <!--/header-->
 <div class="single">
@@ -43,13 +45,7 @@
             @Html.Action("Comments", "Blog")
             <div class="content-form">
                 <h3>Yorum Yazın</h3>
-                <form>
-                    <input type="text" placeholder="Ad Soyad" required />
-                    <input type="text" placeholder="Mail" required />
-                    <input type="text" placeholder="Telefon" required />
-                    <textarea placeholder="Mesaj"></textarea>
-                    <input type="submit" value="Gönder" />
-                </form>
+                @Html.Action("Comment", "Blog")
             </div>
         </div>
 
@@ -57,3 +53,52 @@
     </div>
 </div>
 <!---->
+
+@if (TempData["success"] != null)
+{
+    <script>
+        toastr["success"]("@TempData["success"]")
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    </script>
+}
+
+@if (TempData["error"] != null)
+{
+    <script>
+        toastr["error"]("@TempData["error"]")
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    </script>
+}
+

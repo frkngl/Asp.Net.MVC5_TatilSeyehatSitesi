@@ -41,5 +41,33 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
             data.BlogComment = db.TBLBLOGCOMMENTS.Where(x => x.BLOGID == id && x.STATUS == true).ToList();
             return PartialView(data);
         }
+
+
+        [HttpGet]
+        public PartialViewResult Comment(int id)
+        {
+            ViewBag.BlogID = id;
+            return PartialView();
+        }
+
+        [HttpPost]
+        public PartialViewResult Comment(TBLBLOGCOMMENTS AddCdomment)
+        {
+            try
+            {
+                AddCdomment.DATE = DateTime.Now;
+                AddCdomment.STATUS = false;
+                db.TBLBLOGCOMMENTS.Add(AddCdomment);
+                db.SaveChanges();
+                TempData["success"] = "Yorumunuz Admin tarafından kontrol edilip ona göre yayına alınacaktır.";
+                return PartialView();
+            }
+            catch (Exception)
+            {
+                TempData["error"] = "Yorumunuz eklenirken bir hata oluştu. Lütfen tekrar deneyiniz.";
+                return PartialView();
+            }
+            
+        }
     }
 }
