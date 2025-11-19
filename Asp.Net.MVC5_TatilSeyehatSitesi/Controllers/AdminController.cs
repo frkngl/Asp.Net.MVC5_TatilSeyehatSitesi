@@ -31,9 +31,9 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
         }
          
         [HttpPost]
-        public ActionResult AboutSave(TBLABOUT b, HttpPostedFileBase BlogImage)
+        public ActionResult AboutSave(TBLABOUT update, HttpPostedFileBase BlogImage)
         {
-            var guncellenecekkayit = db.TBLABOUT.Find(b.ID);
+            var UpdateAbout = db.TBLABOUT.Find(update.ID);
 
             try
             {
@@ -41,7 +41,7 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
                 {
                     if (BlogImage.ContentType == "image/jpeg" || BlogImage.ContentType == "image/png" || BlogImage.ContentType == "image/jpg" || BlogImage.ContentType == "image/jfif")
                     {
-                        var yol = Request.MapPath("~/image/" + guncellenecekkayit.IMAGE);
+                        var yol = Request.MapPath("~/image/" + UpdateAbout.IMAGE);
                         if (System.IO.File.Exists(yol))
                         {
                             System.IO.File.Delete(yol);
@@ -60,17 +60,17 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
 
                             rr.Resize(800, 800); 
                         rr.Save(path);
-                        guncellenecekkayit.IMAGE = fileName;
+                        UpdateAbout.IMAGE = fileName;
                     }
                 }
-                guncellenecekkayit.DESCRIPTION = b.DESCRIPTION;
+                UpdateAbout.DESCRIPTION = update.DESCRIPTION;
                 db.SaveChanges();
-                TempData["success"] = "Beceri güncelleme işlemi başarıyla gerçekleşti.";
+                TempData["success"] = "Hakkımızda güncelleme işlemi başarıyla gerçekleşti.";
                 return RedirectToAction("About");
             }
             catch (Exception)
             {
-                TempData["error"] = "Beceri güncelleme sıraasında hata oluştu. Lütfen tekrar deneyiniz.";
+                TempData["error"] = "Hakkımızda güncelleme sıraasında hata oluştu. Lütfen tekrar deneyiniz.";
                 return RedirectToAction("About");
             }
         }
@@ -503,5 +503,45 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
             }
         }
         //-------------------------TRAVELCOMMENT PAGE-------------------------//
+
+
+
+
+
+
+        //-------------------------CONTACT PAGE-------------------------//
+        public ActionResult Contact()
+        {
+            var degerler = db.TBLCONTACT.FirstOrDefault();
+            return View("Contact", degerler);
+        }
+
+        [HttpPost]
+        public ActionResult ContactSave(TBLCONTACT update)
+        {
+            var UpdateContact = db.TBLCONTACT.Find(update.ID);
+
+            try
+            {
+                UpdateContact.DESCRIPTION = update.DESCRIPTION;
+                UpdateContact.LOCATION = update.LOCATION;
+                UpdateContact.PHONE = update.PHONE;
+                UpdateContact.PHONE2 = update.PHONE2;
+                UpdateContact.FAX = update.FAX;
+                UpdateContact.FAX2 = update.FAX2;
+                UpdateContact.EMAIL = update.EMAIL;
+                UpdateContact.EMAIL2 = update.EMAIL2;
+                UpdateContact.ADDRESS = update.ADDRESS;
+                db.SaveChanges();
+                TempData["success"] = "İletişim güncelleme işlemi başarıyla gerçekleşti.";
+                return RedirectToAction("Contact");
+            }
+            catch (Exception)
+            {
+                TempData["error"] = "İletişim güncelleme sıraasında hata oluştu. Lütfen tekrar deneyiniz.";
+                return RedirectToAction("Contact");
+            }
+        }
+        //-------------------------CONTACT PAGE-------------------------//
     }
 }

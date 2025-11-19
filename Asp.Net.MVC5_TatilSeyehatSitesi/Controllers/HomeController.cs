@@ -22,6 +22,8 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
             return View(data);
         }
 
+
+
         //Veritabanı işlemleri G/Ç Yoğun olduğu için, uygulamanızın gelecekteki performansını ve ölçeklenebilirliğini sağlamak adına async Task<ActionResult> yapısı kullanılır.
         public async Task<ActionResult> About()
         {
@@ -29,6 +31,8 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
 
             return View(degerler);
         }
+
+
 
         public ActionResult Contact()
         {

@@ -50,7 +50,7 @@
 @if (TempData["success"] != null)
 {
     <script>
-        toastr["success"]("Güncelleme işlemi başarıyla gerçekleşti.")
+        toastr["success"]("@TempData["success"]")
         toastr.options = {
             "closeButton": false,
             "debug": false,
@@ -74,7 +74,7 @@
 @if (TempData["error"] != null)
 {
     <script>
-        toastr["error"]("Güncelleme işleminde bir hata oluştu. Lütfen tekrar deneyiniz.")
+        toastr["error"]("@TempData["error"]")
         toastr.options = {
             "closeButton": false,
             "debug": false,
