@@ -128,7 +128,7 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
                     blog.DATE = DateTime.Now;
                     blog.DESCRIPTOIN = add.DESCRIPTOIN;
                     blog.IMAGE = fileName;
-                    blog.STATUS = true;
+                    blog.STATUS = false;
                     db.TBLBLOG.Add(blog);
                     db.SaveChanges();
                     TempData["success"] = "Blog başarıyla eklenmiştir.";
@@ -310,50 +310,50 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
             return View(data);
         }
 
-        //[HttpGet]
-        //public ActionResult AddBlog()
-        //{
-        //    return View();
-        //}
+        [HttpGet]
+        public ActionResult AddTravel()
+        {
+            return View();
+        }
 
-        //[HttpPost]
-        //public ActionResult AddBlog(TBLBLOG add, HttpPostedFileBase BlogImage)
-        //{
-        //    try
-        //    {
-        //        if (BlogImage.ContentType == "image/jpeg" || BlogImage.ContentType == "image/png" || BlogImage.ContentType == "image/jpg" || BlogImage.ContentType == "image/jfif")
-        //        {
-        //            var fi = new FileInfo(BlogImage.FileName);
-        //            var fileName = Path.GetFileName(BlogImage.FileName);
-        //            fileName = Guid.NewGuid().ToString() + fi.Extension;
-        //            var path = Path.Combine(Server.MapPath("~/image/"), fileName);
+        [HttpPost]
+        public ActionResult AddTravel(TBLTRAVELS add, HttpPostedFileBase TravelImage)
+        {
+            try
+            {
+                if (TravelImage.ContentType == "image/jpeg" || TravelImage.ContentType == "image/png" || TravelImage.ContentType == "image/jpg" || TravelImage.ContentType == "image/jfif")
+                {
+                    var fi = new FileInfo(TravelImage.FileName);
+                    var fileName = Path.GetFileName(TravelImage.FileName);
+                    fileName = Guid.NewGuid().ToString() + fi.Extension;
+                    var path = Path.Combine(Server.MapPath("~/image/"), fileName);
 
 
-        //            WebImage rr = new WebImage(BlogImage.InputStream);
+                    WebImage rr = new WebImage(TravelImage.InputStream);
 
-        //            if (rr.Width > 1000)
+                    if (rr.Width > 1000)
 
-        //                rr.Resize(800, 800);
-        //            rr.Save(path);
+                        rr.Resize(800, 800);
+                    rr.Save(path);
 
-        //            TBLBLOG blog = new TBLBLOG();
-        //            blog.TITLE = add.TITLE;
-        //            blog.DATE = DateTime.Now;
-        //            blog.DESCRIPTOIN = add.DESCRIPTOIN;
-        //            blog.IMAGE = fileName;
-        //            blog.STATUS = true;
-        //            db.TBLBLOG.Add(blog);
-        //            db.SaveChanges();
-        //            TempData["success"] = "Blog başarıyla eklenmiştir.";
-        //            return RedirectToAction("Blog");
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        TempData["error"] = "Blog eklenirken bir hata oluştu. Lütfen tekrar deneyiniz.";
-        //    }
-        //    return RedirectToAction("Blog");
-        //}
+                    TBLTRAVELS travel = new TBLTRAVELS();
+                    travel.TITLE = add.TITLE;
+                    travel.DATE = DateTime.Now;
+                    travel.DESCRIPTION = add.DESCRIPTION;
+                    travel.IMAGE = fileName;
+                    travel.STATUS = false;
+                    db.TBLTRAVELS.Add(travel);
+                    db.SaveChanges();
+                    TempData["success"] = "Seyahat başarıyla eklenmiştir.";
+                    return RedirectToAction("Travel");
+                }
+            }
+            catch (Exception)
+            {
+                TempData["error"] = "Seyahat eklenirken bir hata oluştu. Lütfen tekrar deneyiniz.";
+            }
+            return RedirectToAction("Travel");
+        }
 
 
         //public ActionResult UpdateBlog(int id)
