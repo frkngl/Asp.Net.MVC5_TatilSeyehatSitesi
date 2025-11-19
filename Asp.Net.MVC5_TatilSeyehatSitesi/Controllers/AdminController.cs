@@ -291,5 +291,165 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
                 return RedirectToAction("BlogComment");
             }
         }
+        //-------------------------BLOGCOMMENT PAGE-------------------------//
+
+
+
+
+
+
+
+
+
+        //-------------------------TRAVEL PAGE-------------------------//
+        public ActionResult Travel(int? page)
+        {
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+            data.TravelList = db.TBLTRAVELS.OrderByDescending(x => x.DATE).ToPagedList(pageNumber, pageSize);
+            return View(data);
+        }
+
+        //[HttpGet]
+        //public ActionResult AddBlog()
+        //{
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //public ActionResult AddBlog(TBLBLOG add, HttpPostedFileBase BlogImage)
+        //{
+        //    try
+        //    {
+        //        if (BlogImage.ContentType == "image/jpeg" || BlogImage.ContentType == "image/png" || BlogImage.ContentType == "image/jpg" || BlogImage.ContentType == "image/jfif")
+        //        {
+        //            var fi = new FileInfo(BlogImage.FileName);
+        //            var fileName = Path.GetFileName(BlogImage.FileName);
+        //            fileName = Guid.NewGuid().ToString() + fi.Extension;
+        //            var path = Path.Combine(Server.MapPath("~/image/"), fileName);
+
+
+        //            WebImage rr = new WebImage(BlogImage.InputStream);
+
+        //            if (rr.Width > 1000)
+
+        //                rr.Resize(800, 800);
+        //            rr.Save(path);
+
+        //            TBLBLOG blog = new TBLBLOG();
+        //            blog.TITLE = add.TITLE;
+        //            blog.DATE = DateTime.Now;
+        //            blog.DESCRIPTOIN = add.DESCRIPTOIN;
+        //            blog.IMAGE = fileName;
+        //            blog.STATUS = true;
+        //            db.TBLBLOG.Add(blog);
+        //            db.SaveChanges();
+        //            TempData["success"] = "Blog başarıyla eklenmiştir.";
+        //            return RedirectToAction("Blog");
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        TempData["error"] = "Blog eklenirken bir hata oluştu. Lütfen tekrar deneyiniz.";
+        //    }
+        //    return RedirectToAction("Blog");
+        //}
+
+
+        //public ActionResult UpdateBlog(int id)
+        //{
+        //    var degerler = db.TBLBLOG.Find(id);
+        //    return View("UpdateBlog", degerler);
+        //}
+
+        //[HttpPost]
+        //public ActionResult UpdateBlogSave(TBLBLOG UpdateBlog, HttpPostedFileBase BlogImage)
+        //{
+        //    var update = db.TBLBLOG.Find(UpdateBlog.ID);
+        //    try
+        //    {
+        //        if (BlogImage != null && BlogImage.ContentLength > 0)
+        //        {
+        //            if (BlogImage.ContentType == "image/jpeg" || BlogImage.ContentType == "image/png" || BlogImage.ContentType == "image/jpg" || BlogImage.ContentType == "image/jfif")
+        //            {
+        //                var lane = Request.MapPath("~/image/" + update.IMAGE);
+        //                if (System.IO.File.Exists(lane))
+        //                {
+        //                    System.IO.File.Delete(lane);
+        //                }
+
+        //                var fi = new FileInfo(BlogImage.FileName);
+        //                var fileName = Path.GetFileName(BlogImage.FileName);
+        //                fileName = Guid.NewGuid().ToString() + fi.Extension;
+        //                var path = Path.Combine(Server.MapPath("~/image/"), fileName);
+
+
+        //                WebImage rr = new WebImage(BlogImage.InputStream);
+
+        //                if (rr.Width > 1000)
+
+        //                    rr.Resize(800, 800);
+        //                rr.Save(path);
+        //                update.IMAGE = fileName;
+        //            }
+        //            else
+        //            {
+        //                TempData["error3"] = "Lütfem resim formatında bir dosya seçiniz!!!";
+        //                return RedirectToAction("Blog");
+        //            }
+        //        }
+        //        update.TITLE = UpdateBlog.TITLE;
+        //        update.DESCRIPTOIN = UpdateBlog.DESCRIPTOIN;
+        //        db.SaveChanges();
+        //        TempData["success2"] = "Blog başarıyla güncellenmiştir.";
+        //        return RedirectToAction("Blog");
+        //    }
+        //    catch (Exception)
+        //    {
+        //        TempData["error2"] = "Blog güncellenirken bir hata oluştu. Lütfen tekrar deneyiniz.";
+        //        return RedirectToAction("Blog");
+        //    }
+        //}
+
+        //public ActionResult DeleteBlog(int id)
+        //{
+        //    var DeleteBlog = db.TBLBLOG.Find(id);
+        //    try
+        //    {
+        //        var lane = Request.MapPath("~/image/" + DeleteBlog.IMAGE);
+        //        if (System.IO.File.Exists(lane))
+        //        {
+        //            System.IO.File.Delete(lane);
+        //        }
+        //        db.TBLBLOG.Remove(DeleteBlog);
+        //        db.SaveChanges();
+        //        TempData["success3"] = "Blog başarıyla silinmiştir.";
+        //        return RedirectToAction("Blog");
+        //    }
+        //    catch (Exception)
+        //    {
+        //        TempData["error4"] = "Blog silinirken bir hata oluştu. Lütfen tekrar deneyiniz.";
+        //        return RedirectToAction("Blog");
+        //    }
+        //}
+
+        //public ActionResult BlogStatus(int id)
+        //{
+        //    try
+        //    {
+        //        var blog = db.TBLBLOG.Find(id);
+        //        bool current = blog.STATUS.GetValueOrDefault(false);
+        //        blog.STATUS = !current;
+        //        db.SaveChanges();
+        //        TempData["success4"] = blog.STATUS == true ? "Blog aktif hale getirildi." : "Blog pasif (yayından kaldırıldı).";
+        //        return RedirectToAction("Blog");
+        //    }
+        //    catch (Exception)
+        //    {
+        //        TempData["error5"] = "Durum güncellenirken bir hata oluştu.";
+        //        return RedirectToAction("Blog");
+        //    }
+        //}
+        //-------------------------BLOG PAGE-------------------------//
     }
 }
