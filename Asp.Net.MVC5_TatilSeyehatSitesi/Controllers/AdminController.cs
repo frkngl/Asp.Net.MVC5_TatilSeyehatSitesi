@@ -200,7 +200,24 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
                 TempData["error4"] = "Blog silinirken bir hata oluştu. Lütfen tekrar deneyiniz.";
                 return RedirectToAction("Blog");
             }
+        }
 
+        public ActionResult BlogStatus(int id)
+        {
+            try
+            {
+                var blog = db.TBLBLOG.Find(id);
+                bool current = blog.STATUS.GetValueOrDefault(false);
+                blog.STATUS = !current;
+                db.SaveChanges();
+                TempData["success4"] = blog.STATUS == true ? "Blog aktif hale getirildi." : "Blog pasif (yayından kaldırıldı).";
+                return RedirectToAction("Blog");
+            }
+            catch (Exception)
+            {
+                TempData["error5"] = "Durum güncellenirken bir hata oluştu.";
+                return RedirectToAction("Blog");
+            }
         }
     }
 }

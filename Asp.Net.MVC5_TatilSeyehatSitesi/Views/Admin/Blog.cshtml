@@ -81,7 +81,7 @@
                 <th>@x.TITLE</th>
                 <th>@x.DATE.Value.ToString("dd.MM.yyyy")</th>
                 <th>@x.DESCRIPTOIN.Substring(0, 150) ...</th>
-                <th><a class="btn btn-success" href="/Admin/BlogStatus/@x.ID">AKTİF</a></th>
+                <th> <a class="btn @(x.STATUS == true ? "btn-success" : "btn-danger")" href="/Admin/BlogStatus/@x.ID">@(x.STATUS == true ? "AKTİF" : "PASİF")</a></th>
                 <th><a class="btn btn-warning" href="/Admin/UpdateBlog/@x.ID">GÜNCELLE</a></th>
                 <td>@Html.ActionLink("Sil", "DeleteBlog", new { id = x.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istediğinize emin misiniz');" })</td>
             </tr>
@@ -245,6 +245,54 @@
 {
     <script>
         toastr["error"]("@TempData["error4"]")
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    </script>
+}
+
+@if (TempData["success4"] != null)
+{
+    <script>
+        toastr["success"]("@TempData["success4"]");
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+    </script>
+}
+
+@if (TempData["error5"] != null)
+{
+    <script>
+        toastr["error"]("@TempData["error5"]")
         toastr.options = {
             "closeButton": false,
             "debug": false,
