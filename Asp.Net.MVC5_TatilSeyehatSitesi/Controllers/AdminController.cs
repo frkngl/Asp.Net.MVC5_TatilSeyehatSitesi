@@ -20,6 +20,10 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
             return View();
         }
 
+
+
+
+        //-------------------------ABOUT PAGE-------------------------//
         public ActionResult About()
         {
             var degerler = db.TBLABOUT.FirstOrDefault();
@@ -70,7 +74,21 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
                 return RedirectToAction("About");
             }
         }
+        //-------------------------ABOUT PAGE-------------------------//
 
+
+
+
+
+
+
+
+
+
+
+
+
+        //-------------------------BLOG PAGE-------------------------//
         public ActionResult Blog(int? page)
         {
             int pageSize = 5;
@@ -217,6 +235,60 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
             {
                 TempData["error5"] = "Durum güncellenirken bir hata oluştu.";
                 return RedirectToAction("Blog");
+            }
+        }
+        //-------------------------BLOG PAGE-------------------------//
+
+
+
+
+
+
+
+
+
+
+        //-------------------------BLOGCOMMENT PAGE-------------------------//
+        public ActionResult BlogComment(int? page)
+        {
+            int pageSize =  10;
+            int pageNumber = (page ?? 1);
+            data.BlogCommentList = db.TBLBLOGCOMMENTS.OrderByDescending(x => x.DATE).ToPagedList(pageNumber, pageSize);
+            return View(data);
+        }
+
+        public ActionResult DeleteBlogComment(int id)
+        {
+            var DeleteBlogComment = db.TBLBLOGCOMMENTS.Find(id);
+            try
+            {
+                db.TBLBLOGCOMMENTS.Remove(DeleteBlogComment);
+                db.SaveChanges();
+                TempData["success"] = "Blog Yorumu başarıyla silinmiştir.";
+                return RedirectToAction("BlogComment");
+            }
+            catch (Exception)
+            {
+                TempData["error"] = "Blog Yorumu silinirken bir hata oluştu. Lütfen tekrar deneyiniz.";
+                return RedirectToAction("BlogComment");
+            }
+        }
+
+        public ActionResult BlogCommentStatus(int id)
+        {
+            try
+            {
+                var BlogComment = db.TBLBLOGCOMMENTS.Find(id);
+                bool current = BlogComment.STATUS.GetValueOrDefault(false);
+                BlogComment.STATUS = !current;
+                db.SaveChanges();
+                TempData["success2"] = BlogComment.STATUS == true ? "Blog Yorumu aktif hale getirildi." : "Blog Yorumu pasif (yayından kaldırıldı).";
+                return RedirectToAction("BlogComment");
+            }
+            catch (Exception)
+            {
+                TempData["error2"] = "Blog Yorum Durumu güncellenirken bir hata oluştu.";
+                return RedirectToAction("BlogComment");
             }
         }
     }

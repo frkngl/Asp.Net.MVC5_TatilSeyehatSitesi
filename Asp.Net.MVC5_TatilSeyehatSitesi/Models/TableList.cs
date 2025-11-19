@@ -10,10 +10,12 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Models
     {
         public IPagedList<TBLBLOG> BlogsList { get; set; }
         public List<TBLBLOG> Blog { get; set; }
+        public IPagedList<TBLBLOGCOMMENTS> BlogCommentList { get; set; }
         public List<TBLBLOGCOMMENTS> BlogComment { get; set; }
         public List<TBLABOUT> About { get; set; }
         public IPagedList<TBLTRAVELS> TravelList { get; set; }
         public List<TBLTRAVELS> Travel { get; set; }
+        public IPagedList<TBLTRAVELCOMMENTS> TravelCommentList { get; set; }
         public List<TBLTRAVELCOMMENTS> TravelComment { get; set; }
     }
 }

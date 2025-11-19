@@ -4,9 +4,10 @@
 @model TableList
 
 @{
-    ViewBag.Title = "Blog";
+    ViewBag.Title = "BlogComment";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
 <style>
     .pagination {
         display: flex;
@@ -62,40 +63,35 @@
 <div style="display:flex; flex-direction:column; margin:0 auto;">
     <h2 style="display:flex; justify-content:center;">Blog Yorum Yeri</h2>
     <br />
-    <a class="btn btn-primary" href="/Admin/AddBlog">YENİ BLOG EKLE</a>
-
     <table class="table table-bordered">
         <tr>
             <th>RESİM</th>
-            <th>BAŞLIK</th>
+            <th>KULLANICI ADI</th>
+            <th>BLOG YERİ</th>
             <th>TARİH</th>
-            <th>AÇIKLAMA</th>
+            <th>MAİL</th>
+            <th>YORUM</th>
             <th>DURUM</th>
-            <th>GÜNCELLE</th>
             <th>SİL</th>
         </tr>
-        @foreach (var x in Model.BlogsList)
+        @foreach (var x in Model.BlogCommentList)
         {
             <tr>
-                <th><img style="border-radius:0px; width:100px; height:auto; object-fit:cover;" src="~/image/@x.IMAGE"></th>
-                <th>@x.TITLE</th>
+                <th><img style="border-radius:0px; width:50px; height:auto; object-fit:cover;" src="~/BlogTheme/images/avatar.png"></th>
+                <th>@x.USERNAME</th>
+                <th>@x.TBLBLOG.TITLE</th>
                 <th>@x.DATE.Value.ToString("dd.MM.yyyy")</th>
-                <th>@x.DESCRIPTOIN.Substring(0, 150) ...</th>
-                <th> <a class="btn @(x.STATUS == true ? "btn-success" : "btn-danger")" href="/Admin/BlogStatus/@x.ID">@(x.STATUS == true ? "AKTİF" : "PASİF")</a></th>
-                <th><a class="btn btn-warning" href="/Admin/UpdateBlog/@x.ID">GÜNCELLE</a></th>
-                <td>@Html.ActionLink("Sil", "DeleteBlog", new { id = x.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istediğinize emin misiniz');" })</td>
+                <th>@x.MAIL</th>
+                <th>@(x.COMMENT)</th>
+                <th><a class="btn @(x.STATUS == true ? "btn-success" : "btn-danger")" href="/Admin/BlogCommentStatus/@x.ID">@(x.STATUS == true ? "AKTİF" : "PASİF")</a></th>
+                <td>@Html.ActionLink("Sil", "DeleteBlogComment", new { id = x.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istediğinize emin misiniz');" })</td>
             </tr>
         }
     </table>
     <div style="display:flex; align-items:center; justify-content:center; width:100%; height:50px;">
-        @Html.PagedListPager(
-    Model.BlogsList,
-    page => Url.Action("Blog", new { page }),
-    PagedListRenderOptions.ClassicPlusFirstAndLast
-)
+        @Html.PagedListPager(Model.BlogCommentList, page => Url.Action("Blog", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
     </div>
 </div>
-
 
 @if (TempData["success"] != null)
 {
@@ -192,124 +188,3 @@
         }
     </script>
 }
-
-@if (TempData["error3"] != null)
-{
-    <script>
-        toastr["error"]("@TempData["error3"]")
-        toastr.options = {
-            "closeButton": false,
-            "debug": false,
-            "newestOnTop": false,
-            "progressBar": false,
-            "positionClass": "toast-top-right",
-            "preventDuplicates": false,
-            "onclick": null,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "timeOut": "5000",
-            "extendedTimeOut": "1000",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
-        }
-    </script>
-}
-
-@if (TempData["success3"] != null)
-{
-    <script>
-        toastr["success"]("@TempData["success3"]")
-        toastr.options = {
-            "closeButton": false,
-            "debug": false,
-            "newestOnTop": false,
-            "progressBar": false,
-            "positionClass": "toast-top-right",
-            "preventDuplicates": false,
-            "onclick": null,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "timeOut": "5000",
-            "extendedTimeOut": "1000",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
-        }
-    </script>
-}
-
-@if (TempData["error4"] != null)
-{
-    <script>
-        toastr["error"]("@TempData["error4"]")
-        toastr.options = {
-            "closeButton": false,
-            "debug": false,
-            "newestOnTop": false,
-            "progressBar": false,
-            "positionClass": "toast-top-right",
-            "preventDuplicates": false,
-            "onclick": null,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "timeOut": "5000",
-            "extendedTimeOut": "1000",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
-        }
-    </script>
-}
-
-@if (TempData["success4"] != null)
-{
-    <script>
-        toastr["success"]("@TempData["success4"]");
-        toastr.options = {
-            "closeButton": false,
-            "debug": false,
-            "newestOnTop": false,
-            "progressBar": false,
-            "positionClass": "toast-top-right",
-            "preventDuplicates": false,
-            "onclick": null,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "timeOut": "5000",
-            "extendedTimeOut": "1000",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
-        };
-    </script>
-}
-
-@if (TempData["error5"] != null)
-{
-    <script>
-        toastr["error"]("@TempData["error5"]")
-        toastr.options = {
-            "closeButton": false,
-            "debug": false,
-            "newestOnTop": false,
-            "progressBar": false,
-            "positionClass": "toast-top-right",
-            "preventDuplicates": false,
-            "onclick": null,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "timeOut": "5000",
-            "extendedTimeOut": "1000",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
-        }
-    </script>
-}
-
