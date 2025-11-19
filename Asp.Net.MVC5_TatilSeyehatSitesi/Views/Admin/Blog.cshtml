@@ -81,8 +81,8 @@
                 <th>@x.TITLE</th>
                 <th>@x.DATE.Value.ToString("dd.MM.yyyy")</th>
                 <th>@x.DESCRIPTOIN.Substring(0, 150) ...</th>
-                <th><a class="btn btn-success" href="/Admin/BlogUpdate/@x.ID">AKTİF</a></th>
-                <th><a class="btn btn-warning" href="/Admin/BlogUpdate/@x.ID">GÜNCELLE</a></th>
+                <th><a class="btn btn-success" href="/Admin/BlogStatus/@x.ID">AKTİF</a></th>
+                <th><a class="btn btn-warning" href="/Admin/UpdateBlog/@x.ID">GÜNCELLE</a></th>
                 <td>@Html.ActionLink("Sil", "DeleteBlog", new { id = x.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istediğinize emin misiniz');" })</td>
             </tr>
         }
@@ -100,7 +100,7 @@
 @if (TempData["success"] != null)
 {
     <script>
-        toastr["success"]("Blog ekleme işlemi başarıyla gerçekleşti.")
+        toastr["success"]("@TempData["success"]")
         toastr.options = {
             "closeButton": false,
             "debug": false,
@@ -124,7 +124,127 @@
 @if (TempData["error"] != null)
 {
     <script>
-        toastr["error"]("Blog ekleme işleminde bir hata oluştu. Lütfen tekrar deneyiniz.")
+        toastr["error"]("@TempData["error"]")
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    </script>
+}
+
+@if (TempData["success2"] != null)
+{
+    <script>
+        toastr["success"]("@TempData["success2"]")
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    </script>
+}
+
+@if (TempData["error2"] != null)
+{
+    <script>
+        toastr["error"]("@TempData["error2"]")
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    </script>
+}
+
+@if (TempData["error3"] != null)
+{
+    <script>
+        toastr["error"]("@TempData["error3"]")
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    </script>
+}
+
+@if (TempData["success3"] != null)
+{
+    <script>
+        toastr["success"]("@TempData["success3"]")
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    </script>
+}
+
+@if (TempData["error4"] != null)
+{
+    <script>
+        toastr["error"]("@TempData["error4"]")
         toastr.options = {
             "closeButton": false,
             "debug": false,
