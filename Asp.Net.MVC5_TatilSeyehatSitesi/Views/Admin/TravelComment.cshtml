@@ -4,7 +4,7 @@
 @model TableList
 
 @{
-    ViewBag.Title = "BlogComment";
+    ViewBag.Title = "TravelComment";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -61,7 +61,7 @@
 <script src="~/Scripts/toastr.min.js"></script>
 
 <div style="display:flex; flex-direction:column; margin:0 auto;">
-    <h2 style="display:flex; justify-content:center;">Blog Yorum Yeri</h2>
+    <h2 style="display:flex; justify-content:center;">Seyahat Yorum Yeri</h2>
     <br />
     <table class="table table-bordered">
         <tr>
@@ -74,22 +74,22 @@
             <th>DURUM</th>
             <th>SİL</th>
         </tr>
-        @foreach (var x in Model.BlogCommentList)
+        @foreach (var x in Model.TravelCommentList)
         {
             <tr>
                 <th><img style="border-radius:0px; width:50px; height:auto; object-fit:cover;" src="~/BlogTheme/images/avatar.png"></th>
                 <th>@x.USERNAME</th>
-                <th>@x.TBLBLOG.TITLE</th>
+                <th>@x.TBLTRAVELS.TITLE</th>
                 <th>@x.DATE.Value.ToString("dd.MM.yyyy")</th>
                 <th>@x.MAIL</th>
                 <th>@(x.COMMENT)</th>
-                <th><a class="btn @(x.STATUS == true ? "btn-success" : "btn-danger")" href="/Admin/BlogCommentStatus/@x.ID">@(x.STATUS == true ? "AKTİF" : "PASİF")</a></th>
-                <td>@Html.ActionLink("Sil", "DeleteBlogComment", new { id = x.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istediğinize emin misiniz');" })</td>
+                <th><a class="btn @(x.STATUS == true ? "btn-success" : "btn-danger")" href="/Admin/TravelCommentStatus/@x.ID">@(x.STATUS == true ? "AKTİF" : "PASİF")</a></th>
+                <td>@Html.ActionLink("Sil", "DeleteTravelComment", new { id = x.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istediğinize emin misiniz');" })</td>
             </tr>
         }
     </table>
     <div style="display:flex; align-items:center; justify-content:center; width:100%; height:50px;">
-        @Html.PagedListPager(Model.BlogCommentList, page => Url.Action("BlogComment", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+        @Html.PagedListPager(Model.TravelCommentList, page => Url.Action("TravelComment", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
     </div>
 </div>
 
@@ -188,3 +188,4 @@
         }
     </script>
 }
+

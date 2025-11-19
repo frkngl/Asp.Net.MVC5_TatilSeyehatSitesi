@@ -454,6 +454,8 @@
     <Content Include="Views\Admin\Travel.cshtml" />
     <Content Include="Views\Admin\AddTravel.cshtml" />
     <Content Include="Views\Admin\UpdateTravel.cshtml" />
+    <Content Include="Views\Admin\TravelComment.cshtml" />
+    <Content Include="Views\Travel\Comment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

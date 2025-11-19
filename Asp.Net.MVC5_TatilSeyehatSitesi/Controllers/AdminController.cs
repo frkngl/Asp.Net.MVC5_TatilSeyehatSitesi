@@ -450,6 +450,58 @@ namespace Asp.Net.MVC5_TatilSeyehatSitesi.Controllers
                 return RedirectToAction("Travel");
             }
         }
-        //-------------------------BLOG PAGE-------------------------//
+        //-------------------------TRAVEL PAGE-------------------------//
+
+
+
+
+
+
+
+
+        //-------------------------TRAVELCOMMENT PAGE-------------------------//
+        public ActionResult TravelComment(int? page)
+        {
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            data.TravelCommentList = db.TBLTRAVELCOMMENTS.OrderByDescending(x => x.DATE).ToPagedList(pageNumber, pageSize);
+            return View(data);
+        }
+
+        public ActionResult DeleteTravelComment(int id)
+        {
+            var DeleteTravelComment = db.TBLTRAVELCOMMENTS.Find(id);
+            try
+            {
+                db.TBLTRAVELCOMMENTS.Remove(DeleteTravelComment);
+                db.SaveChanges();
+                TempData["success"] = "Seyahat Yorumu başarıyla silinmiştir.";
+                return RedirectToAction("TravelComment");
+            }
+            catch (Exception)
+            {
+                TempData["error"] = "Seyahat Yorumu silinirken bir hata oluştu. Lütfen tekrar deneyiniz.";
+                return RedirectToAction("TravelComment");
+            }
+        }
+
+        public ActionResult TravelCommentStatus(int id)
+        {
+            try
+            {
+                var TravelComment = db.TBLTRAVELCOMMENTS.Find(id);
+                bool current = TravelComment.STATUS.GetValueOrDefault(false);
+                TravelComment.STATUS = !current;
+                db.SaveChanges();
+                TempData["success2"] = TravelComment.STATUS == true ? "Seyahat Yorumu aktif hale getirildi." : "Seyahat Yorumu pasif (yayından kaldırıldı).";
+                return RedirectToAction("TravelComment");
+            }
+            catch (Exception)
+            {
+                TempData["error2"] = "Seyahat Yorum Durumu güncellenirken bir hata oluştu.";
+                return RedirectToAction("TravelComment");
+            }
+        }
+        //-------------------------TRAVELCOMMENT PAGE-------------------------//
     }
 }
